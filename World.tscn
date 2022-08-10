@@ -50,31 +50,31 @@ shape = SubResource( 2 )
 [node name="Flouers" type="Node" parent="."]
 
 [node name="Flouer" parent="Flouers" instance=ExtResource( 2 )]
-position = Vector2( 140, 121 )
+position = Vector2( 106, 140 )
 
 [node name="Flouer2" parent="Flouers" instance=ExtResource( 2 )]
-position = Vector2( 108, 318 )
+position = Vector2( 204, 557 )
 
 [node name="Flouer3" parent="Flouers" instance=ExtResource( 2 )]
-position = Vector2( 286, 545 )
+position = Vector2( 589, 426 )
 
 [node name="Flouer4" parent="Flouers" instance=ExtResource( 2 )]
-position = Vector2( 554, 436 )
+position = Vector2( 1138, 452 )
 
 [node name="Flouer5" parent="Flouers" instance=ExtResource( 2 )]
-position = Vector2( 935, 503 )
+position = Vector2( 1168, 172 )
 
 [node name="Flouer6" parent="Flouers" instance=ExtResource( 2 )]
-position = Vector2( 1166, 310 )
+position = Vector2( 869, 240 )
 
 [node name="Flouer7" parent="Flouers" instance=ExtResource( 2 )]
-position = Vector2( 984, 160 )
+position = Vector2( 604, 72 )
 
 [node name="Flouer8" parent="Flouers" instance=ExtResource( 2 )]
-position = Vector2( 641, 125 )
+position = Vector2( 330, 308 )
 
 [node name="Flouer9" parent="Flouers" instance=ExtResource( 2 )]
-position = Vector2( 375, 192 )
+position = Vector2( 876, 615 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 616, 634 )

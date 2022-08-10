@@ -7,7 +7,11 @@
 extents = Vector2( 30.5, 31 )
 
 [node name="Player" type="KinematicBody2D"]
+scale = Vector2( 0.75, 0.75 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 stop_distance = 24
 
 [node name="Bee" type="Sprite" parent="."]
