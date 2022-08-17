@@ -9,3 +9,8 @@ func play_music():
 	$Music.stream = music
 	$Music.play()
 	
+func turn_down_volume():
+	$Music.volume_db = -12
+	
+func reset_volume():
+	$Music.volume_db = 0
