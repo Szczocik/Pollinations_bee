@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://sun1.png" type="Texture" id=1]
+[ext_resource path="res://Flouer/Flouer.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=4]
 radius = 34.5326
@@ -77,8 +78,9 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 0.5, 0.5 ), Vector2( 1, 1 ), Vector2( 0.5, 0.5 ), Vector2( 1, 1 ) ]
 }
 
-[node name="Flouer" type="Area2D"]
+[node name="Flouer" type="Area2D" groups=["flouer"]]
 scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 1, 1, 0.0431373, 1 )
