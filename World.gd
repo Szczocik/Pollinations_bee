@@ -6,18 +6,12 @@ func _ready():
 	$MusicTimer.start()
 	
 
-		
-	
-	
-
 func _on_MusicTimer_timeout():
 	MusicController.turn_down_volume()
-
+	$MusicReset.start()
 
 func _on_MusicReset_timeout():
 	MusicController.reset_volume()
 
 
 
-func _on_MusicPause_timeout():
-	pass # Replace with function body.
