@@ -79,3 +79,19 @@ position = Vector2( 876, 615 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 616, 634 )
 z_index = 1
+
+[node name="MusicTimer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="MusicPause" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="MusicReset" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="MusicTimer" to="." method="_on_MusicTimer_timeout"]
+[connection signal="timeout" from="MusicPause" to="." method="_on_MusicPause_timeout"]
+[connection signal="timeout" from="MusicReset" to="." method="_on_MusicReset_timeout"]
