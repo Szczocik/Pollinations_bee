@@ -79,3 +79,6 @@ position = Vector2( 876, 615 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 616, 634 )
 z_index = 1
+
+[node name="MusicTimer" type="Timer" parent="."]
+one_shot = true
