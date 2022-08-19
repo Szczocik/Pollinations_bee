@@ -97,5 +97,7 @@ anims/light = SubResource( 5 )
 anims/move = SubResource( 3 )
 
 [node name="Light2D" type="Light2D" parent="."]
+scale = Vector2( 1.33803, 1.27027 )
 texture = ExtResource( 1 )
 energy = 0.0
+shadow_enabled = true
