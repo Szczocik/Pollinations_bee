@@ -12,6 +12,7 @@ func _on_MusicTimer_timeout():
 	$MusicReset.start()
 	get_tree().call_group("flouer", "light")
 	get_tree().call_group("flouer", "stop_move")
+	get_tree().call_group("player", "move_to_flouer")
 	
 
 func _on_MusicReset_timeout():

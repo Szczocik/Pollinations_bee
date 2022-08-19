@@ -3,10 +3,9 @@ extends KinematicBody2D
 export (int) var min_move_speed = 100
 export (int) var max_move_speed = 350
 export (int) var stop_distance = 20
-onready var player = $Player
 
 
-func _process(delta):
+func _process(_delta):
 	_look_at_mouse()
 	_move_to_mouse()
 	
@@ -25,15 +24,16 @@ func _move_to_mouse():
 func move_to_flouer():
 	# get flouer nodes
 	var flouer_points = get_tree().get_nodes_in_group("flouer")
-	
+	var position_player = get_tree().get_nodes_in_group("player")
 	# assume the first flouer node is closest
 	var nearest_flouer_point = flouer_points[0]
+	var player = get_tree().get_nodes_in_group("player")
 	
 	# look trough flouer nodes to see if any are closer
 	for flouer_point in flouer_points:
-		if flouer_point.global_position.distance_to(player.global_position) < nearest_flouer_point.global_position.distance_to(player.global_position):
+		if flouer_point.global_position.distance_to(position_player.global_position) < nearest_flouer_point.global_position.distance_to(position_player.global_position):
 			nearest_flouer_point = flouer_point
 			
 	# reposition player
-	player.global_position = nearest_flouer_point.global_position
+	position_player.global_position = nearest_flouer_point.global_position
 			
