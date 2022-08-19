@@ -6,7 +6,6 @@ func _ready():
 	$MusicTimer.start()
 	
 	
-	
 
 func _on_MusicTimer_timeout():
 	MusicController.turn_down_volume()
