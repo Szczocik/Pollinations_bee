@@ -11,7 +11,7 @@ func play_music():
 	$Music.play()
 	
 func turn_down_volume():
-	$Music.volume_db = -20
+	$Music.volume_db = -10
 	
 func reset_volume():
 	$Music.volume_db = 0

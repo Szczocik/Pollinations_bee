@@ -1,10 +1,17 @@
 extends Node2D
-
+onready var player = $Player
+onready var Flouer = preload("res://Flouer/Flouer.tscn")
 
 func _ready():
 	MusicController.play_music()
 	$MusicTimer.start()
 		
+
+func Pollinations():
+	var flouer = Flouer.instance() 
+	
+	
+	
 
 func _on_MusicTimer_timeout():
 	MusicController.turn_down_volume()
