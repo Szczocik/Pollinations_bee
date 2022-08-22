@@ -12,7 +12,6 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
-stop_distance = 24
 
 [node name="Bee" type="Sprite" parent="."]
 texture = ExtResource( 1 )

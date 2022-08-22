@@ -86,5 +86,7 @@ wait_time = 20.0
 [node name="MusicReset" type="Timer" parent="."]
 wait_time = 7.0
 
+[node name="Area2D" type="Area2D" parent="."]
+
 [connection signal="timeout" from="MusicTimer" to="." method="_on_MusicTimer_timeout"]
 [connection signal="timeout" from="MusicReset" to="." method="_on_MusicReset_timeout"]
