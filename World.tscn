@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Flouer/Flouer.tscn" type="PackedScene" id=2]
@@ -9,6 +9,9 @@ extents = Vector2( 666, 11.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 17, 402 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 69.75, 373.5 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 5 )
@@ -86,7 +89,61 @@ wait_time = 20.0
 [node name="MusicReset" type="Timer" parent="."]
 wait_time = 7.0
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Stripes" type="Node" parent="."]
+
+[node name="Strip" type="Area2D" parent="Stripes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip"]
+position = Vector2( 72.25, 361 )
+shape = SubResource( 3 )
+
+[node name="Strip2" type="Area2D" parent="Stripes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip2"]
+position = Vector2( 215, 359 )
+shape = SubResource( 3 )
+
+[node name="Strip3" type="Area2D" parent="Stripes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip3"]
+position = Vector2( 358, 354 )
+shape = SubResource( 3 )
+
+[node name="Strip4" type="Area2D" parent="Stripes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip4"]
+position = Vector2( 501, 357 )
+shape = SubResource( 3 )
+
+[node name="Strip5" type="Area2D" parent="Stripes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip5"]
+position = Vector2( 644, 358 )
+shape = SubResource( 3 )
+
+[node name="Strip6" type="Area2D" parent="Stripes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip6"]
+position = Vector2( 787, 363 )
+shape = SubResource( 3 )
+
+[node name="Strip7" type="Area2D" parent="Stripes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip7"]
+position = Vector2( 930, 355 )
+shape = SubResource( 3 )
+
+[node name="Strip8" type="Area2D" parent="Stripes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip8"]
+position = Vector2( 1073, 363 )
+shape = SubResource( 3 )
+
+[node name="Strip9" type="Area2D" parent="Stripes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip9"]
+position = Vector2( 1215, 357 )
+shape = SubResource( 3 )
 
 [connection signal="timeout" from="MusicTimer" to="." method="_on_MusicTimer_timeout"]
 [connection signal="timeout" from="MusicReset" to="." method="_on_MusicReset_timeout"]
