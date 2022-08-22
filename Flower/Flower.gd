@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 
 
 onready var light = $Light2D

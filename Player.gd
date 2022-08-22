@@ -19,19 +19,20 @@ func process_mouse():
 			position.x = max(target, bee_width)
 
 
-func move_to_flouer():
-	# get flouer nodes
-	var flouer_points = get_tree().get_nodes_in_group("flouer")
-	var position_player = get_tree().get_nodes_in_group("player")
-	# assume the first flouer node is closest
-	var nearest_flouer_point = flouer_points[0]
-	var player = get_tree().get_nodes_in_group("player")
+func move_to_flower():
+	pass
+	# get flower nodes
+	# var flower_points = get_tree().get_nodes_in_group("flower")
+	# var position_player = get_tree().get_nodes_in_group("player")
+	# assume the first flower node is closest
+	# var nearest_flower_point = flower_points[0]
+	# var player = get_tree().get_nodes_in_group("player")
 	
-	# look trough flouer nodes to see if any are closer
-	for flouer_point in flouer_points:
-		if flouer_point.global_position.distance_to(position_player.global_position) < nearest_flouer_point.global_position.distance_to(position_player.global_position):
-			nearest_flouer_point = flouer_point
+	# look trough flower nodes to see if any are closer
+	# for flower_point in flower_points:
+		# if flower_point.global_position.distance_to(position_player.global_position) < nearest_flower_point.global_position.distance_to(position_player.global_position):
+			# nearest_flower_point = flower_point
 			
 	# reposition player
-	position_player.global_position = nearest_flouer_point.global_position
+	# position_player.global_position = nearest_flower_point.global_position
 			

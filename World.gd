@@ -1,27 +1,25 @@
 extends Node2D
 onready var player = $Player
-onready var Flouer = preload("res://Flouer/Flouer.tscn")
+onready var flower = $Flowers/Flower
 
 func _ready():
 	MusicController.play_music()
-	$MusicTimer.start()
-		
+	$MusicTimer.start() 
 
-func Pollinations():
-	var flouer = Flouer.instance() 
-	
-	
-	
 
 func _on_MusicTimer_timeout():
 	MusicController.turn_down_volume()
 	$MusicReset.start()
-	get_tree().call_group("flouer", "light")
-	get_tree().call_group("flouer", "stop_move")
-	#get_tree().call_group("player", "move_to_flouer")
+	get_tree().call_group("flower", "light")
+	get_tree().call_group("flower", "stop_move")
+
 	
 
 func _on_MusicReset_timeout():
 	MusicController.reset_volume()
-	get_tree().call_group("flouer", "light_off")
-	get_tree().call_group("flouer", "start_move")
+	get_tree().call_group("flower", "light_off")
+	get_tree().call_group("flower", "start_move")
+
+
+func _on_Strip_body_entered(body):
+	pass		

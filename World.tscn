@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Flouer/Flouer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Flower/Flower.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -106,33 +106,33 @@ shape = SubResource( 3 )
 position = Vector2( 1215, 357 )
 shape = SubResource( 3 )
 
-[node name="Flouers" type="Node" parent="."]
+[node name="Flowers" type="Node" parent="."]
 
-[node name="Flouer" parent="Flouers" instance=ExtResource( 2 )]
+[node name="Flower" parent="Flowers" instance=ExtResource( 2 )]
 position = Vector2( 73, 150 )
 
-[node name="Flouer2" parent="Flouers" instance=ExtResource( 2 )]
+[node name="Flower2" parent="Flowers" instance=ExtResource( 2 )]
 position = Vector2( 204, 557 )
 
-[node name="Flouer3" parent="Flouers" instance=ExtResource( 2 )]
+[node name="Flower3" parent="Flowers" instance=ExtResource( 2 )]
 position = Vector2( 648, 409 )
 
-[node name="Flouer4" parent="Flouers" instance=ExtResource( 2 )]
+[node name="Flower4" parent="Flowers" instance=ExtResource( 2 )]
 position = Vector2( 1076, 260 )
 
-[node name="Flouer5" parent="Flouers" instance=ExtResource( 2 )]
+[node name="Flower5" parent="Flowers" instance=ExtResource( 2 )]
 position = Vector2( 1214, 505 )
 
-[node name="Flouer6" parent="Flouers" instance=ExtResource( 2 )]
+[node name="Flower6" parent="Flowers" instance=ExtResource( 2 )]
 position = Vector2( 790, 191 )
 
-[node name="Flouer7" parent="Flouers" instance=ExtResource( 2 )]
+[node name="Flower7" parent="Flowers" instance=ExtResource( 2 )]
 position = Vector2( 506, 128 )
 
-[node name="Flouer8" parent="Flouers" instance=ExtResource( 2 )]
+[node name="Flower8" parent="Flowers" instance=ExtResource( 2 )]
 position = Vector2( 349, 283 )
 
-[node name="Flouer9" parent="Flouers" instance=ExtResource( 2 )]
+[node name="Flower9" parent="Flowers" instance=ExtResource( 2 )]
 position = Vector2( 938, 453 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
@@ -145,5 +145,6 @@ wait_time = 20.0
 [node name="MusicReset" type="Timer" parent="."]
 wait_time = 10.0
 
+[connection signal="body_entered" from="Stripes/Strip" to="." method="_on_Strip_body_entered"]
 [connection signal="timeout" from="MusicTimer" to="." method="_on_MusicTimer_timeout"]
 [connection signal="timeout" from="MusicReset" to="." method="_on_MusicReset_timeout"]
