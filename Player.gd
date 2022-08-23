@@ -1,11 +1,12 @@
 extends KinematicBody2D
 
+
 export (int) var speed = 200
 
 
 func _physics_process(delta):
 	process_mouse()
-
+	
 	
 func process_mouse():
 	var target = get_viewport().get_mouse_position().x

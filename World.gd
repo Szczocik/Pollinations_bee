@@ -1,6 +1,4 @@
 extends Node2D
-onready var Player = $Player
-onready var Flower = $Flowers/Flower
 
 func _ready():
 	MusicController.play_music()
@@ -12,7 +10,6 @@ func _on_MusicTimer_timeout():
 	$MusicReset.start()
 	get_tree().call_group("flower", "light")
 	get_tree().call_group("flower", "stop_move")
-	_on_Strip_body_entered(Player, Flower)
 	
 
 func _on_MusicReset_timeout():
@@ -21,8 +18,5 @@ func _on_MusicReset_timeout():
 	get_tree().call_group("flower", "start_move")
 
 
-func _on_Strip_body_entered(player, flower):
-	var direction = get_node("Flowers/Flower").position
-	flower = Flower.global_position
-	player = Player.position
-	player.move_and_slide(direction)
+func _on_Strip_body_entered(body):
+	pass
