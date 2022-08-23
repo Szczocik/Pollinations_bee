@@ -1,8 +1,10 @@
 extends Node2D
 
+
 func _ready():
 	MusicController.play_music()
-	$MusicTimer.start() 
+	$MusicTimer.start()
+	 
 
 
 func _on_MusicTimer_timeout():
@@ -18,3 +20,13 @@ func _on_MusicReset_timeout():
 	get_tree().call_group("flower", "start_move")
 
 
+
+
+func _on_Strip_area_entered(area):
+	if area:
+		print("flower")
+
+
+func _on_Strip_body_entered(body):
+	if body:
+		print("player")
