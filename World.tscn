@@ -58,6 +58,9 @@ shape = SubResource( 2 )
 position = Vector2( 72, 367 )
 shape = SubResource( 3 )
 
+[node name="Flouer" parent="Stripes/Strip" instance=ExtResource( 2 )]
+position = Vector2( 67, 137 )
+
 [node name="Strip2" type="Area2D" parent="Stripes"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip2"]
@@ -70,17 +73,26 @@ shape = SubResource( 3 )
 position = Vector2( 358, 354 )
 shape = SubResource( 3 )
 
+[node name="Flouer" parent="Stripes/Strip3" instance=ExtResource( 2 )]
+position = Vector2( 368, 262 )
+
 [node name="Strip4" type="Area2D" parent="Stripes"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip4"]
 position = Vector2( 501, 357 )
 shape = SubResource( 3 )
 
+[node name="Flouer" parent="Stripes/Strip4" instance=ExtResource( 2 )]
+position = Vector2( 511, 464 )
+
 [node name="Strip5" type="Area2D" parent="Stripes"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip5"]
 position = Vector2( 644, 358 )
 shape = SubResource( 3 )
+
+[node name="Flouer" parent="Stripes/Strip5" instance=ExtResource( 2 )]
+position = Vector2( 643, 105 )
 
 [node name="Strip6" type="Area2D" parent="Stripes"]
 
@@ -94,46 +106,28 @@ shape = SubResource( 3 )
 position = Vector2( 930, 355 )
 shape = SubResource( 3 )
 
+[node name="Flouer" parent="Stripes/Strip7" instance=ExtResource( 2 )]
+position = Vector2( 935, 451 )
+
 [node name="Strip8" type="Area2D" parent="Stripes"]
+position = Vector2( 2, -6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip8"]
 position = Vector2( 1073, 363 )
 shape = SubResource( 3 )
 
+[node name="Flouer" parent="Stripes/Strip8" instance=ExtResource( 2 )]
+position = Vector2( 1067, 203 )
+
 [node name="Strip9" type="Area2D" parent="Stripes"]
+position = Vector2( 8, 21 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip9"]
-position = Vector2( 1215, 357 )
+position = Vector2( 1210, 340 )
 shape = SubResource( 3 )
 
-[node name="Flowers" type="Node" parent="."]
-
-[node name="Flower" parent="Flowers" instance=ExtResource( 2 )]
-position = Vector2( 73, 150 )
-
-[node name="Flower2" parent="Flowers" instance=ExtResource( 2 )]
-position = Vector2( 204, 557 )
-
-[node name="Flower3" parent="Flowers" instance=ExtResource( 2 )]
-position = Vector2( 648, 409 )
-
-[node name="Flower4" parent="Flowers" instance=ExtResource( 2 )]
-position = Vector2( 1076, 260 )
-
-[node name="Flower5" parent="Flowers" instance=ExtResource( 2 )]
-position = Vector2( 1214, 505 )
-
-[node name="Flower6" parent="Flowers" instance=ExtResource( 2 )]
-position = Vector2( 790, 191 )
-
-[node name="Flower7" parent="Flowers" instance=ExtResource( 2 )]
-position = Vector2( 506, 128 )
-
-[node name="Flower8" parent="Flowers" instance=ExtResource( 2 )]
-position = Vector2( 349, 283 )
-
-[node name="Flower9" parent="Flowers" instance=ExtResource( 2 )]
-position = Vector2( 938, 453 )
+[node name="Flouer" parent="Stripes/Strip9" instance=ExtResource( 2 )]
+position = Vector2( 1210, 540 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 616, 634 )
@@ -145,6 +139,5 @@ wait_time = 20.0
 [node name="MusicReset" type="Timer" parent="."]
 wait_time = 10.0
 
-[connection signal="body_entered" from="Stripes/Strip" to="." method="_on_Strip_body_entered"]
 [connection signal="timeout" from="MusicTimer" to="." method="_on_MusicTimer_timeout"]
 [connection signal="timeout" from="MusicReset" to="." method="_on_MusicReset_timeout"]

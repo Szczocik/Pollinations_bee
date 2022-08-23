@@ -18,5 +18,3 @@ func _on_MusicReset_timeout():
 	get_tree().call_group("flower", "start_move")
 
 
-func _on_Strip_body_entered(body):
-	pass
