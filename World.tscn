@@ -163,7 +163,13 @@ wait_time = 20.0
 wait_time = 10.0
 
 [connection signal="area_entered" from="Stripes/Strip" to="." method="_on_Strip_area_entered"]
-[connection signal="body_entered" from="Stripes/Strip" to="." method="_on_Strip_body_entered"]
 [connection signal="area_entered" from="Stripes/Strip2" to="." method="_on_Strip2_area_entered"]
+[connection signal="area_entered" from="Stripes/Strip3" to="." method="_on_Strip3_area_entered"]
+[connection signal="area_entered" from="Stripes/Strip4" to="." method="_on_Strip4_area_entered"]
+[connection signal="area_entered" from="Stripes/Strip5" to="." method="_on_Strip5_area_entered"]
+[connection signal="area_entered" from="Stripes/Strip6" to="." method="_on_Strip6_area_entered"]
+[connection signal="area_entered" from="Stripes/Strip7" to="." method="_on_Strip7_area_entered"]
+[connection signal="area_entered" from="Stripes/Strip8" to="." method="_on_Strip8_area_entered"]
+[connection signal="area_entered" from="Stripes/Strip9" to="." method="_on_Strip9_area_entered"]
 [connection signal="timeout" from="MusicTimer" to="." method="_on_MusicTimer_timeout"]
 [connection signal="timeout" from="MusicReset" to="." method="_on_MusicReset_timeout"]

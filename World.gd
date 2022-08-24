@@ -22,11 +22,19 @@ func _on_MusicReset_timeout():
 
 func _on_Strip_area_entered(area): return area.position
 func _on_Strip2_area_entered(area): return area.position	
-	
+func _on_Strip3_area_entered(area): return area.position	
+func _on_Strip4_area_entered(area): return area.position
+func _on_Strip5_area_entered(area): return area.position
+func _on_Strip6_area_entered(area): return area.position
+func _on_Strip7_area_entered(area): return area.position
+func _on_Strip8_area_entered(area): return area.position
+func _on_Strip9_area_entered(area): return area.position
+
 
 func _on_Strip_body_entered(body):
 	print(body.position)
 	return body.position
+
 
 
 
