@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-onready var flower = load("res://Flower/Flower.tscn")
+
 export (int) var speed = 200
 
 
@@ -19,23 +19,5 @@ func process_mouse():
 		if not test_move(Transform2D(transform), Vector2(-1,0)):
 			position.x = max(target, bee_width)
 
-
-func detect_flower():
-	if $RayCast2D.is_colliding():
-		print("mam kwiatka")
-	
-	# get flower nodes
-	# var flower_points = get_tree().get_nodes_in_group("flower")
-	# var position_player = get_tree().get_nodes_in_group("player")
-	# assume the first flower node is closest
-	# var nearest_flower_point = flower_points[0]
-	# var player = get_tree().get_nodes_in_group("player")
-	
-	# look trough flower nodes to see if any are closer
-	# for flower_point in flower_points:
-		# if flower_point.global_position.distance_to(position_player.global_position) < nearest_flower_point.global_position.distance_to(position_player.global_position):
-			# nearest_flower_point = flower_point
-			
-	# reposition player
-	# position_player.global_position = nearest_flower_point.global_position
-			
+		
+		

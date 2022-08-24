@@ -4,7 +4,7 @@
 [ext_resource path="res://49465361-1a53ec80-f806-11e8-9dd3-ae09aed0de3f.png" type="Texture" id=3]
 
 [sub_resource type="GDScript" id=6]
-script/source = "extends Area2D
+script/source = "extends KinematicBody2D
 
 
 onready var light = $Light2D
@@ -122,7 +122,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, -200 ), Vector2( 0, 0 ), Vector2( 0, 200 ), Vector2( 0, 0 ) ]
 }
 
-[node name="Flouer" type="Area2D" groups=["flower"]]
+[node name="Flower" type="KinematicBody2D" groups=["flower"]]
 scale = Vector2( 0.5, 0.5 )
 script = SubResource( 6 )
 

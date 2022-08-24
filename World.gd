@@ -1,7 +1,10 @@
 extends Node2D
 
-onready var player = $Player
 
+onready var player = $Player
+onready var Strip = $Stripes.get_children()
+
+var flower = load("res://Flower/Flower.tscn")
 
 func _ready():
 	MusicController.play_music()
@@ -14,7 +17,6 @@ func _on_MusicTimer_timeout():
 	$MusicReset.start()
 	get_tree().call_group("flower", "light")
 	get_tree().call_group("flower", "stop_move")
-	get_tree().call_group("player", "detect_flower")
 	
 
 func _on_MusicReset_timeout():
@@ -26,3 +28,26 @@ func _on_MusicReset_timeout():
 func check_player():
 	pass
 		
+	
+
+
+func _on_Strip_body_entered(body): return body
+func _on_Strip1_body_entered(body): return body
+func _on_Strip2_body_entered(body): return body
+func _on_Strip3_body_entered(body): return body
+func _on_Strip4_body_entered(body): return body
+func _on_Strip5_body_entered(body): return body
+func _on_Strip6_body_entered(body): return body
+func _on_Strip7_body_entered(body): return body
+func _on_Strip8_body_entered(body): return body
+func _on_Strip9_body_entered(body): return body
+
+
+
+
+
+
+
+
+
+
