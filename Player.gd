@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 export (int) var speed = 200
 
+var strip = []
 
 func _physics_process(delta):
 	process_mouse()

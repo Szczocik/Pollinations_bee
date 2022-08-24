@@ -17,16 +17,16 @@ func _on_MusicTimer_timeout():
 func _on_MusicReset_timeout():
 	MusicController.reset_volume()
 	get_tree().call_group("flower", "light_off")
-	get_tree().call_group("flower", "start_move")
+	# get_tree().call_group("flower", "start_move")
 
 
-
-
-func _on_Strip_area_entered(area):
-	if area:
-		print("flower")
-
+func _on_Strip_area_entered(area): return area.position
+func _on_Strip2_area_entered(area): return area.position	
+	
 
 func _on_Strip_body_entered(body):
-	if body:
-		print("player")
+	print(body.position)
+	return body.position
+
+
+

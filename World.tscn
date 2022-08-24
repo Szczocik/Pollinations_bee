@@ -11,7 +11,7 @@ extents = Vector2( 666, 11.5 )
 extents = Vector2( 17, 402 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 69.75, 373.5 )
+extents = Vector2( 67.375, 352.625 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 5 )
@@ -56,7 +56,7 @@ shape = SubResource( 2 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip"]
-position = Vector2( 72, 367 )
+position = Vector2( 71.625, 360 )
 shape = SubResource( 3 )
 
 [node name="Flouer" parent="Stripes/Strip" instance=ExtResource( 2 )]
@@ -75,7 +75,7 @@ shape = SubResource( 3 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip3"]
-position = Vector2( 358, 354 )
+position = Vector2( 357, 360 )
 shape = SubResource( 3 )
 
 [node name="Flouer" parent="Stripes/Strip3" instance=ExtResource( 2 )]
@@ -87,11 +87,11 @@ collision_mask = 0
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip4"]
-position = Vector2( 501, 357 )
+position = Vector2( 498, 361 )
 shape = SubResource( 3 )
 
 [node name="Flouer" parent="Stripes/Strip4" instance=ExtResource( 2 )]
-position = Vector2( 511, 464 )
+position = Vector2( 509, 465 )
 collision_layer = 4
 collision_mask = 0
 
@@ -99,7 +99,7 @@ collision_mask = 0
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip5"]
-position = Vector2( 644, 358 )
+position = Vector2( 641, 362 )
 shape = SubResource( 3 )
 
 [node name="Flouer" parent="Stripes/Strip5" instance=ExtResource( 2 )]
@@ -111,18 +111,18 @@ collision_mask = 0
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip6"]
-position = Vector2( 787, 363 )
+position = Vector2( 784, 359 )
 shape = SubResource( 3 )
 
 [node name="Strip7" type="Area2D" parent="Stripes"]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip7"]
-position = Vector2( 930, 355 )
+position = Vector2( 926, 361 )
 shape = SubResource( 3 )
 
 [node name="Flouer" parent="Stripes/Strip7" instance=ExtResource( 2 )]
-position = Vector2( 935, 451 )
+position = Vector2( 935, 456 )
 collision_layer = 4
 collision_mask = 0
 
@@ -131,7 +131,7 @@ position = Vector2( 2, -6 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip8"]
-position = Vector2( 1073, 363 )
+position = Vector2( 1067, 364 )
 shape = SubResource( 3 )
 
 [node name="Flouer" parent="Stripes/Strip8" instance=ExtResource( 2 )]
@@ -144,11 +144,11 @@ position = Vector2( 8, 21 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip9"]
-position = Vector2( 1210, 340 )
+position = Vector2( 1200, 339 )
 shape = SubResource( 3 )
 
 [node name="Flouer" parent="Stripes/Strip9" instance=ExtResource( 2 )]
-position = Vector2( 1210, 540 )
+position = Vector2( 1208, 540 )
 collision_layer = 4
 collision_mask = 0
 
@@ -164,5 +164,6 @@ wait_time = 10.0
 
 [connection signal="area_entered" from="Stripes/Strip" to="." method="_on_Strip_area_entered"]
 [connection signal="body_entered" from="Stripes/Strip" to="." method="_on_Strip_body_entered"]
+[connection signal="area_entered" from="Stripes/Strip2" to="." method="_on_Strip2_area_entered"]
 [connection signal="timeout" from="MusicTimer" to="." method="_on_MusicTimer_timeout"]
 [connection signal="timeout" from="MusicReset" to="." method="_on_MusicReset_timeout"]
