@@ -1,9 +1,8 @@
 extends KinematicBody2D
 
-
+onready var flower = load("res://Flower/Flower.tscn")
 export (int) var speed = 200
 
-var strip = []
 
 func _physics_process(delta):
 	process_mouse()
@@ -21,8 +20,10 @@ func process_mouse():
 			position.x = max(target, bee_width)
 
 
-func move_to_flower():
-	pass
+func detect_flower():
+	if $RayCast2D.is_colliding():
+		print("mam kwiatka")
+	
 	# get flower nodes
 	# var flower_points = get_tree().get_nodes_in_group("flower")
 	# var position_player = get_tree().get_nodes_in_group("player")

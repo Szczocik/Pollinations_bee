@@ -1,5 +1,7 @@
 extends Node2D
 
+onready var player = $Player
+
 
 func _ready():
 	MusicController.play_music()
@@ -12,29 +14,15 @@ func _on_MusicTimer_timeout():
 	$MusicReset.start()
 	get_tree().call_group("flower", "light")
 	get_tree().call_group("flower", "stop_move")
+	get_tree().call_group("player", "detect_flower")
 	
 
 func _on_MusicReset_timeout():
 	MusicController.reset_volume()
 	get_tree().call_group("flower", "light_off")
-	# get_tree().call_group("flower", "start_move")
+	get_tree().call_group("flower", "start_move")
 
 
-func _on_Strip_area_entered(area): return area.position
-func _on_Strip2_area_entered(area): return area.position	
-func _on_Strip3_area_entered(area): return area.position	
-func _on_Strip4_area_entered(area): return area.position
-func _on_Strip5_area_entered(area): return area.position
-func _on_Strip6_area_entered(area): return area.position
-func _on_Strip7_area_entered(area): return area.position
-func _on_Strip8_area_entered(area): return area.position
-func _on_Strip9_area_entered(area): return area.position
-
-
-func _on_Strip_body_entered(body):
-	print(body.position)
-	return body.position
-
-
-
-
+func check_player():
+	pass
+		
