@@ -7,7 +7,8 @@
 
 [sub_resource type="DynamicFont" id=4]
 size = 40
-outline_size = 2
+outline_size = 5
+outline_color = Color( 0.807843, 0.764706, 0.12549, 1 )
 use_filter = true
 font_data = ExtResource( 3 )
 
@@ -33,11 +34,11 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1280.0
-margin_bottom = 720.0
+margin_bottom = 710.0
 custom_fonts/font = SubResource( 4 )
 text = "Countdown"
 align = 1
-valign = 1
+valign = 2
 
 [node name="Walls" type="Node" parent="."]
 
