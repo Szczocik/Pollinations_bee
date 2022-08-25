@@ -21,4 +21,5 @@ func process_mouse():
 			position.x = max(target, bee_width)
 
 		
-		
+func pollition_effect():
+	$Pollination.emitting = true

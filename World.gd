@@ -20,10 +20,11 @@ func _on_MusicTimer_timeout():
 	get_tree().call_group("flower", "light_on")
 	get_tree().call_group("flower", "stop_move")
 	
-	pollination_effect.start()
-	
 
 func _on_CountdownTimer_timeout():
+	get_tree().call_group("player", "pollition_effect")
+	$Player/ShakeAnimation.play("shake")
+	
 	$CountdownLabel.visible = false
 	MusicController.reset_volume()
 	get_tree().call_group("flower", "light_off")
@@ -50,3 +51,4 @@ func _on_Strip6_body_entered(body): return body
 func _on_Strip7_body_entered(body): return body
 func _on_Strip8_body_entered(body): return body
 func _on_Strip9_body_entered(body): return body
+

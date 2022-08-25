@@ -24,6 +24,8 @@ func stop_move():
 func start_move():
 	$AnimationPlayer.play(\"move\")
 
+func pollition_effect():
+	$Pollination.emitting = true
 
 func take_position(location):
 	emit_signal(\"flower_position\", global_position)
