@@ -25,7 +25,6 @@ color_ramp = SubResource( 3 )
 [node name="Pollination" type="Particles2D"]
 emitting = false
 amount = 100
-lifetime = 0.5
 one_shot = true
 process_material = SubResource( 1 )
 script = ExtResource( 1 )

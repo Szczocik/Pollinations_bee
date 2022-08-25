@@ -3,6 +3,7 @@ extends Node2D
 
 onready var player = $Player
 onready var Stripes = $Stripes.get_children()
+onready var pollination_effect = $EffectsLayer/Pollination
 
 var flower = load("res://Flower/Flower.tscn")
 
@@ -16,10 +17,10 @@ func _on_MusicTimer_timeout():
 	MusicController.turn_down_volume()
 	$CountdownTimer.start()
 	$CountdownLabel.visible = true
-	get_tree().call_group("flower", "light")
+	get_tree().call_group("flower", "light_on")
 	get_tree().call_group("flower", "stop_move")
-	check_player()
-
+	
+	pollination_effect.start()
 	
 
 func _on_CountdownTimer_timeout():
@@ -27,8 +28,9 @@ func _on_CountdownTimer_timeout():
 	MusicController.reset_volume()
 	get_tree().call_group("flower", "light_off")
 	get_tree().call_group("flower", "start_move")
-	
 
+	
+	
 func _process(delta):
 	$CountdownLabel.text = str(int($CountdownTimer.time_left) +1)
 
