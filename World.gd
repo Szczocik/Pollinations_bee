@@ -14,20 +14,28 @@ func _ready():
 
 func _on_MusicTimer_timeout():
 	MusicController.turn_down_volume()
-	$MusicReset.start()
+	$CountdownTimer.start()
+	$CountdownLabel.visible = true
 	get_tree().call_group("flower", "light")
 	get_tree().call_group("flower", "stop_move")
 	check_player()
+
 	
 
-func _on_MusicReset_timeout():
+func _on_CountdownTimer_timeout():
+	$CountdownLabel.visible = false
 	MusicController.reset_volume()
 	get_tree().call_group("flower", "light_off")
 	get_tree().call_group("flower", "start_move")
+	
 
+func _process(delta):
+	$CountdownLabel.text = str(int($CountdownTimer.time_left) +1)
 
 func check_player():
-	pass
+	var strip = []
+	for player in Stripes:
+		pass
 
 
 func _on_Strip_body_entered(body): return body
