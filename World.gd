@@ -25,6 +25,7 @@ func _on_MusicTimer_timeout():
 
 func _on_CountdownTimer_timeout():
 	get_tree().call_group("player", "pollition_effect")
+	get_tree().call_group("player", "_move_to_mouse")
 	$Player/ShakeAnimation.play("shake")
 	
 	$CountdownLabel.visible = false
