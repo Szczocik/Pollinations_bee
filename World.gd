@@ -21,7 +21,7 @@ func _on_MusicTimer_timeout():
 	$CountdownLabel.visible = true
 	get_tree().call_group("flower", "light_on")
 	get_tree().call_group("flower", "stop_move")
-	
+	check_area(player,flower)
 	
 
 func _on_CountdownTimer_timeout():
@@ -29,12 +29,15 @@ func _on_CountdownTimer_timeout():
 	get_tree().call_group("player", "_move_to_mouse")
 	$Player/ShakeAnimation.play("shake")
 	
+	
 	$CountdownLabel.visible = false
 	MusicController.reset_volume()
 	get_tree().call_group("flower", "light_off")
 	get_tree().call_group("flower", "start_move")
 
-	
+func check_area(player, flower):
+	if player and flower in Stripes:
+		print("OK") 
 	
 func _process(delta):
 	$CountdownLabel.text = str(int($CountdownTimer.time_left) +1)
