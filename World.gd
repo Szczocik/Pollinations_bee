@@ -22,6 +22,7 @@ func _on_MusicTimer_timeout():
 	get_tree().call_group("flower", "light_on")
 	get_tree().call_group("flower", "stop_move")
 	
+	
 
 func _on_CountdownTimer_timeout():
 	get_tree().call_group("player", "pollition_effect")
