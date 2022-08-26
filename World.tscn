@@ -173,6 +173,7 @@ wait_time = 20.0
 wait_time = 5.0
 one_shot = true
 
+[connection signal="area_entered" from="Stripes/Strip" to="." method="_on_Strip_area_entered"]
 [connection signal="body_entered" from="Stripes/Strip" to="." method="_on_Strip_body_entered"]
 [connection signal="body_entered" from="Stripes/Strip1" to="." method="_on_Strip1_body_entered"]
 [connection signal="body_entered" from="Stripes/Strip2" to="." method="_on_Strip2_body_entered"]
