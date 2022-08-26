@@ -63,4 +63,4 @@ func _on_Strip9_body_entered(body): return body
 func _on_Strip_area_entered(flower):
 	if flower:
 		emit_signal("flower_on", flower, global_position)
-		print(flower, flower.global_position)
+		print(flower.global_position)
