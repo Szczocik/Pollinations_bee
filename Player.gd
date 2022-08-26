@@ -7,12 +7,13 @@ export (int) var max_move_speed = 250
 export (int) var stop_distance = 20
 
 	
-	
 
 func _physics_process(delta):
 	process_mouse()
 	
 	
+		
+		
 func process_mouse():
 	var target = get_viewport().get_mouse_position().x
 	var bee_width = get_node("CollisionShape2D").shape.extents.x
