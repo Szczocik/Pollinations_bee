@@ -1,7 +1,7 @@
 extends Node2D
 
-signal flower_on(flower)
-signal player_on(position)
+#signal flower_on(flower)
+#signal player_on(position)
 
 onready var player = $Player
 onready var Stripes = $Stripes.get_children()
@@ -27,7 +27,6 @@ func _on_MusicTimer_timeout():
 
 func _on_CountdownTimer_timeout():
 	get_tree().call_group("player", "pollition_effect")
-	get_tree().call_group("player", "_move_to_mouse")
 	$Player/ShakeAnimation.play("shake")
 	
 	
@@ -45,20 +44,19 @@ func check_flower():
 	var player_strip = $Player.strip
 	var flower = Flower
 	var flower_position = emit_signal("flower_on", flower, global_position)
-	if flower_position:
-		pass
-		
+	if flower and player: 
+		pass	
 
 
 func _on_Strip_body_entered(Flower):
-	check_flower()
+	pass
 
 
 
 func _on_Strip_area_entered(flower):
-	if flower:
+	if flower and Player:
 		emit_signal("flower_on", flower, global_position)
-		print(flower.global_position)
+		#print(flower.global_position)
 
 
 func _on_Strip1_area_entered(area):

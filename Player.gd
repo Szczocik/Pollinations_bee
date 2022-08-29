@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 
 class_name Player
 
@@ -8,12 +8,16 @@ export (int) var stop_distance = 20
 
 var strip = []
 
+var moving = false 
+var destination = Vector2()
+var movement = Vector2()
+var Flower = load("res://Flower/Flower.tscn")
+
+
 
 func _physics_process(delta):
-	process_mouse()
+	process_mouse()	
 	
-	
-		
 		
 func process_mouse():
 	var target = get_viewport().get_mouse_position().x
@@ -26,6 +30,14 @@ func process_mouse():
 		#if not test_move(Transform2D(transform), Vector2(-1,0)):
 			position.x = max(target, bee_width)
 
+func change_moving():
+	pass
+	
+	
+func move_to_flower():
+	pass
+		
+
 func _look_at_mouse():
 	look_at(get_global_mouse_position())
 	rotation_degrees = rotation_degrees + 90
@@ -35,13 +47,11 @@ func _move_to_mouse():
 		var direction = get_global_mouse_position() - position
 		var normalized_direction = direction.normalized()
 		var direction_distance = direction.length()
-		#move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))
+		move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))
 		
 func pollition_effect():
 	$Pollination.emitting = true
 	
-
-
 
 func _on_Player_area_entered(area):
 	if area:

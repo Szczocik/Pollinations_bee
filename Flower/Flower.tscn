@@ -29,7 +29,6 @@ func pollition_effect():
 
 func take_position(location):
 	emit_signal(\"flower_position\", global_position)
-	
 "
 
 [sub_resource type="CircleShape2D" id=4]
