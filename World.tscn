@@ -168,6 +168,7 @@ z_index = 1
 
 [node name="MusicTimer" type="Timer" parent="."]
 wait_time = 10.0
+one_shot = true
 
 [node name="CountdownTimer" type="Timer" parent="."]
 wait_time = 5.0

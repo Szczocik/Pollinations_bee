@@ -15,7 +15,8 @@ func _ready():
 	MusicController.play_music()
 	$MusicTimer.start()
 	 
-
+func _process(delta):
+	$CountdownLabel.text = str(int($CountdownTimer.time_left) +1)
 
 func _on_MusicTimer_timeout():
 	MusicController.turn_down_volume()
@@ -24,28 +25,34 @@ func _on_MusicTimer_timeout():
 	get_tree().call_group("flower", "light_on")
 	get_tree().call_group("flower", "stop_move")
 	
-
 func _on_CountdownTimer_timeout():
+	#$Player.block = true
 	get_tree().call_group("player", "pollition_effect")
 	$Player/ShakeAnimation.play("shake")
 	
-	
-	
+	var curr = curr_strip()
+	if curr >= 0:
+		print(curr, ", ", Stripes[curr])
+		
 	$CountdownLabel.visible = false
 	MusicController.reset_volume()
 	get_tree().call_group("flower", "light_off")
 	get_tree().call_group("flower", "start_move")
+	#$Player.block = false
 
+func curr_strip():
+	var no = -1
+	for strip in Stripes:
+		no += 1
+		var cshape = strip.get_node("CollisionShape2D")
+		var shape = cshape.get_shape()
+		if player.position.x < (cshape.position.x - shape.get_extents().x) + shape.get_extents().x * 2:
+			break
+		if no == Stripes.size() - 1:
+			no = -1
+	return no
 	
-func _process(delta):
-	$CountdownLabel.text = str(int($CountdownTimer.time_left) +1)
 
-func check_flower():
-	var player_strip = $Player.strip
-	var flower = Flower
-	var flower_position = emit_signal("flower_on", flower, global_position)
-	if flower and player: 
-		pass	
 
 
 func _on_Strip_body_entered(Flower):
@@ -54,9 +61,7 @@ func _on_Strip_body_entered(Flower):
 
 
 func _on_Strip_area_entered(flower):
-	if flower and Player:
-		emit_signal("flower_on", flower, global_position)
-		#print(flower.global_position)
+	pass
 
 
 func _on_Strip1_area_entered(area):

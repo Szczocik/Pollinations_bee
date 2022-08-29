@@ -6,7 +6,7 @@ export (int) var min_move_speed = 100
 export (int) var max_move_speed = 250
 export (int) var stop_distance = 20
 
-var strip = []
+var block = false
 
 var moving = false 
 var destination = Vector2()
@@ -16,18 +16,21 @@ var Flower = load("res://Flower/Flower.tscn")
 
 
 func _physics_process(delta):
-	process_mouse()	
+	if block:
+		return
+	process_mouse()
 	
+		
 		
 func process_mouse():
 	var target = get_viewport().get_mouse_position().x
 	var bee_width = get_node("CollisionShape2D").shape.extents.x
 	var viewport_width = get_viewport().size.x
 	if position.x < target:
-		#if not test_move(Transform2D(transform), Vector2(1,0)):
+		if not test_move(Transform2D(transform), Vector2(1,0)):
 			position.x = min(target, viewport_width - bee_width)
 	elif position.x > target:
-		#if not test_move(Transform2D(transform), Vector2(-1,0)):
+		if not test_move(Transform2D(transform), Vector2(-1,0)):
 			position.x = max(target, bee_width)
 
 func change_moving():
@@ -52,9 +55,3 @@ func _move_to_mouse():
 func pollition_effect():
 	$Pollination.emitting = true
 	
-
-func _on_Player_area_entered(area):
-	if area:
-		strip.push_front(area.name)
-		strip.remove(1)
-		print(strip)
