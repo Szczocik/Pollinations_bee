@@ -71,95 +71,95 @@ shape = SubResource( 2 )
 
 [node name="Stripes" type="Node" parent="."]
 
-[node name="Strip" type="Area2D" parent="Stripes" groups=["Strip"]]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip"]
-position = Vector2( 66.5, 360.75 )
-shape = SubResource( 3 )
-
-[node name="Flower" parent="Stripes/Strip" instance=ExtResource( 2 )]
-position = Vector2( 63, 209 )
-
 [node name="Strip1" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip1"]
-position = Vector2( 195, 360 )
+position = Vector2( 66.5, 360.75 )
 shape = SubResource( 3 )
+
+[node name="Flower" parent="Stripes/Strip1" instance=ExtResource( 2 )]
+position = Vector2( 63, 209 )
 
 [node name="Strip2" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip2"]
-position = Vector2( 327, 360 )
+position = Vector2( 195, 360 )
 shape = SubResource( 3 )
-
-[node name="Flower2" parent="Stripes/Strip2" instance=ExtResource( 2 )]
-position = Vector2( 331, 483 )
 
 [node name="Strip3" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip3"]
-position = Vector2( 456, 359 )
+position = Vector2( 327, 360 )
 shape = SubResource( 3 )
 
-[node name="Flower4" parent="Stripes/Strip3" instance=ExtResource( 2 )]
-position = Vector2( 455, 207 )
+[node name="Flower2" parent="Stripes/Strip3" instance=ExtResource( 2 )]
+position = Vector2( 331, 483 )
 
 [node name="Strip4" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip4"]
-position = Vector2( 584, 360 )
+position = Vector2( 456, 359 )
 shape = SubResource( 3 )
 
-[node name="Flouer5" parent="Stripes/Strip4" instance=ExtResource( 2 )]
-position = Vector2( 587, 414 )
+[node name="Flower4" parent="Stripes/Strip4" instance=ExtResource( 2 )]
+position = Vector2( 455, 207 )
 
 [node name="Strip5" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip5"]
-position = Vector2( 713, 361 )
+position = Vector2( 584, 360 )
 shape = SubResource( 3 )
+
+[node name="Flouer5" parent="Stripes/Strip5" instance=ExtResource( 2 )]
+position = Vector2( 587, 414 )
 
 [node name="Strip6" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip6"]
-position = Vector2( 839, 362 )
+position = Vector2( 713, 361 )
 shape = SubResource( 3 )
-
-[node name="Flouer6" parent="Stripes/Strip6" instance=ExtResource( 2 )]
-position = Vector2( 844, 172 )
 
 [node name="Strip7" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip7"]
-position = Vector2( 966, 359 )
+position = Vector2( 839, 362 )
 shape = SubResource( 3 )
 
-[node name="Flouer7" parent="Stripes/Strip7" instance=ExtResource( 2 )]
-position = Vector2( 977, 438 )
+[node name="Flouer6" parent="Stripes/Strip7" instance=ExtResource( 2 )]
+position = Vector2( 844, 172 )
 
 [node name="Strip8" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip8"]
-position = Vector2( 1092, 358 )
+position = Vector2( 966, 359 )
 shape = SubResource( 3 )
+
+[node name="Flouer7" parent="Stripes/Strip8" instance=ExtResource( 2 )]
+position = Vector2( 977, 438 )
 
 [node name="Strip9" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip9"]
+position = Vector2( 1092, 358 )
+shape = SubResource( 3 )
+
+[node name="Strip10" type="Area2D" parent="Stripes" groups=["Strip"]]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip10"]
 position = Vector2( 1218, 359 )
 shape = SubResource( 3 )
 
-[node name="Flouer8" parent="Stripes/Strip9" instance=ExtResource( 2 )]
+[node name="Flouer8" parent="Stripes/Strip10" instance=ExtResource( 2 )]
 position = Vector2( 1235, 406 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
@@ -174,15 +174,5 @@ one_shot = true
 wait_time = 5.0
 one_shot = true
 
-[connection signal="area_entered" from="Stripes/Strip" to="." method="_on_Strip_area_entered"]
-[connection signal="area_entered" from="Stripes/Strip1" to="." method="_on_Strip1_area_entered"]
-[connection signal="area_entered" from="Stripes/Strip2" to="." method="_on_Strip2_area_entered"]
-[connection signal="area_entered" from="Stripes/Strip3" to="." method="_on_Strip3_area_entered"]
-[connection signal="area_entered" from="Stripes/Strip4" to="." method="_on_Strip4_area_entered"]
-[connection signal="area_entered" from="Stripes/Strip5" to="." method="_on_Strip5_area_entered"]
-[connection signal="area_entered" from="Stripes/Strip6" to="." method="_on_Strip6_area_entered"]
-[connection signal="area_entered" from="Stripes/Strip7" to="." method="_on_Strip7_area_entered"]
-[connection signal="area_entered" from="Stripes/Strip8" to="." method="_on_Strip8_area_entered"]
-[connection signal="area_entered" from="Stripes/Strip9" to="." method="_on_Strip9_area_entered"]
 [connection signal="timeout" from="MusicTimer" to="." method="_on_MusicTimer_timeout"]
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_CountdownTimer_timeout"]

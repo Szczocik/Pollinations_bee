@@ -1,7 +1,5 @@
 extends Node2D
 
-#signal flower_on(flower)
-#signal player_on(position)
 
 onready var player = $Player
 onready var Stripes = $Stripes.get_children()
@@ -53,48 +51,3 @@ func curr_strip():
 	return no
 	
 
-
-
-func _on_Strip_body_entered(Flower):
-	pass
-
-
-
-func _on_Strip_area_entered(flower):
-	pass
-
-
-func _on_Strip1_area_entered(area):
-	pass # Replace with function body.
-
-
-func _on_Strip2_area_entered(area):
-	pass # Replace with function body.
-
-
-func _on_Strip3_area_entered(area):
-	pass # Replace with function body.
-
-
-func _on_Strip4_area_entered(area):
-	pass # Replace with function body.
-
-
-func _on_Strip5_area_entered(area):
-	pass # Replace with function body.
-
-
-func _on_Strip6_area_entered(area):
-	pass # Replace with function body.
-
-
-func _on_Strip7_area_entered(area):
-	pass # Replace with function body.
-
-
-func _on_Strip8_area_entered(area):
-	pass # Replace with function body.
-
-
-func _on_Strip9_area_entered(area):
-	pass # Replace with function body.
