@@ -6,7 +6,7 @@ onready var Stripes = $Stripes.get_children()
 onready var pollination_effect = $EffectsLayer/Pollination
 
 var Flower = load("res://Flower/Flower.tscn")
-var Stripes_curr = []
+var Flower_curr = []
 
 
 func _ready():
@@ -31,8 +31,8 @@ func _on_CountdownTimer_timeout():
 	var curr = curr_strip()
 	if curr >= 0:
 		print(curr, ", ", Stripes[curr])
-		Stripes_curr.append(Stripes[curr])
-		print(Stripes_curr)
+		Flower_curr.append(Stripes[curr])
+		print(Flower_curr)
 		
 	$CountdownLabel.visible = false
 	MusicController.reset_volume()
