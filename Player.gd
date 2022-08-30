@@ -17,9 +17,8 @@ var World_scene = load("res://World.tscn")
 
 func _physics_process(delta):
 	if block:
-		return 
+		return
 	process_mouse()
-	
 
 		
 func process_mouse():
