@@ -12,13 +12,16 @@ var moving = false
 var destination = Vector2()
 var movement = Vector2()
 var Flower = load("res://Flower/Flower.tscn")
-
+var World_scene = load("res://World.tscn")
+var flower_position_curr = World_scene.Stripes_curr.position
 
 
 func _physics_process(delta):
 	if block:
-		return
+		_move_to_flouer()
+		return 
 	process_mouse()
+	
 	
 		
 		
@@ -32,22 +35,15 @@ func process_mouse():
 	elif position.x > target:
 		if not test_move(Transform2D(transform), Vector2(-1,0)):
 			position.x = max(target, bee_width)
-
-func change_moving():
-	pass
-	
-	
-func move_to_flower():
-	pass
 		
 
 func _look_at_mouse():
 	look_at(get_global_mouse_position())
 	rotation_degrees = rotation_degrees + 90
 	
-func _move_to_mouse():
-	if position.distance_to(get_global_mouse_position()) > stop_distance:
-		var direction = get_global_mouse_position() - position
+func _move_to_flouer():
+	if position.distance_to(flower_position_curr.get_position()) > stop_distance:
+		var direction = flower_position_curr.get_position() - position
 		var normalized_direction = direction.normalized()
 		var direction_distance = direction.length()
 		move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))
