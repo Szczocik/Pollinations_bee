@@ -38,7 +38,7 @@ func _look_at_mouse():
 	look_at(get_global_mouse_position())
 	rotation_degrees = rotation_degrees + 90
 	
-func _move_to_flouer():
+func _move_to_flower():
 	if position.distance_to(get_global_mouse_position()) > stop_distance:
 		var direction = get_global_mouse_position() - position
 		var normalized_direction = direction.normalized()
