@@ -31,7 +31,8 @@ func _on_CountdownTimer_timeout():
 	var curr = curr_strip()
 	if curr >= 0:
 		print(curr, ", ", Stripes[curr])
-		Flower_curr.append(Stripes[curr])
+		Flower_curr.push_front(Stripes[curr])
+		Flower_curr.remove(1)
 		print(Flower_curr)
 		
 	$CountdownLabel.visible = false
@@ -51,5 +52,7 @@ func curr_strip():
 		if no == Stripes.size() - 1:
 			no = -1
 	return no
+	
+
 	
 
