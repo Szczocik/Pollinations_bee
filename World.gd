@@ -1,5 +1,6 @@
 extends Node2D
 
+export (PackedScene) var World_scene
 
 onready var player = $Player
 onready var Stripes = $Stripes.get_children()
