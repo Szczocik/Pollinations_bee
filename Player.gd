@@ -15,7 +15,7 @@ var Flower = load("res://Flower/Flower.tscn")
 var World_scene = load("res://World.tscn")
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if block:
 		return
 	process_mouse()

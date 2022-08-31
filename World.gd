@@ -6,7 +6,7 @@ onready var player = $Player
 onready var Stripes = $Stripes.get_children()
 onready var pollination_effect = $EffectsLayer/Pollination
 
-var Flower = load("res://Flower/Flower.tscn")
+export (PackedScene) var Flower
 var Flower_curr = []
 
 
@@ -14,7 +14,7 @@ func _ready():
 	MusicController.play_music()
 	$MusicTimer.start()
 	 
-func _process(delta):
+func _process(_delta):
 	$CountdownLabel.text = str(int($CountdownTimer.time_left) +1)
 
 func _on_MusicTimer_timeout():
@@ -34,7 +34,7 @@ func _on_CountdownTimer_timeout():
 		print(curr, ", ", Stripes[curr])
 		Flower_curr.push_front(Stripes[curr])
 		Flower_curr.remove(1)
-		print(Flower_curr)
+		print(Stripes)
 		
 	$CountdownLabel.visible = false
 	MusicController.reset_volume()

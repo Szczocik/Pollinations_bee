@@ -174,3 +174,5 @@ wait_time = 5.0
 
 [connection signal="timeout" from="MusicTimer" to="." method="_on_MusicTimer_timeout"]
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_CountdownTimer_timeout"]
+
+[editable path="Stripes/Strip1/Flower"]
