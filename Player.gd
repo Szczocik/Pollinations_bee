@@ -8,12 +8,6 @@ export (int) var stop_distance = 20
 
 var block = false
 
-var moving = false 
-var destination = Vector2()
-var movement = Vector2()
-var Flower = load("res://Flower/Flower.tscn")
-var World_scene = load("res://World.tscn")
-
 
 func _physics_process(_delta):
 	if block:

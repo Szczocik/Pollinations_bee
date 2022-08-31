@@ -27,12 +27,16 @@ func _on_MusicTimer_timeout():
 func _on_CountdownTimer_timeout():
 	
 	var curr = curr_strip()
+	
 	if curr >= 0:
 		
 		print(curr, ", ", Stripes[curr])
 		Flower_curr.push_front(Stripes[curr])
 		Flower_curr.remove(1)
-		
+		print(curr)				
+	
+	
+	
 		
 	$CountdownLabel.visible = false
 	$Player.block = true
@@ -40,13 +44,14 @@ func _on_CountdownTimer_timeout():
 	get_tree().call_group("player", "pollition_effect")
 	$Player/ShakeAnimation.play("shake")
 	
-	#MusicController.reset_volume()
+	MusicController.reset_volume()
 	
-	#get_tree().call_group("flower", "start_move")
+	get_tree().call_group("flower", "start_move")
 	
 	
 func _on_StopTimer_timeout():
 	pass
+	
 
 func curr_strip():
 	var no = -1
