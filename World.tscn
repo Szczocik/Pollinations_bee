@@ -172,7 +172,12 @@ wait_time = 10.0
 [node name="CountdownTimer" type="Timer" parent="."]
 wait_time = 5.0
 
+[node name="StopTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="timeout" from="MusicTimer" to="." method="_on_MusicTimer_timeout"]
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_CountdownTimer_timeout"]
+[connection signal="timeout" from="StopTimer" to="." method="_on_StopTimer_timeout"]
 
 [editable path="Stripes/Strip1/Flower"]
