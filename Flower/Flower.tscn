@@ -9,6 +9,8 @@ script/source = "extends Area2D
 
 signal flower_position(location)
 
+export (PackedScene) var Flower
+
 onready var light = $Light2D
 onready var pollination = $Pollination
 

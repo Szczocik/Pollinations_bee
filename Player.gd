@@ -16,10 +16,11 @@ var World_scene = load("res://World.tscn")
 
 
 func _physics_process(_delta):
-	if block:
+	if not block:
+		process_mouse()
 		return
-	process_mouse()
-
+	_move_to_flower()
+	#_move_to_flower()
 		
 func process_mouse():
 	var target = get_viewport().get_mouse_position().x
