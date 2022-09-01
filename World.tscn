@@ -115,7 +115,7 @@ collision_layer = 2
 position = Vector2( 584, 360 )
 shape = SubResource( 3 )
 
-[node name="Flouer5" parent="Stripes/Strip5" instance=ExtResource( 2 )]
+[node name="Flower5" parent="Stripes/Strip5" instance=ExtResource( 2 )]
 position = Vector2( 587, 414 )
 
 [node name="Strip6" type="Area2D" parent="Stripes" groups=["Strip"]]
@@ -132,7 +132,7 @@ collision_layer = 2
 position = Vector2( 839, 362 )
 shape = SubResource( 3 )
 
-[node name="Flouer6" parent="Stripes/Strip7" instance=ExtResource( 2 )]
+[node name="Flower6" parent="Stripes/Strip7" instance=ExtResource( 2 )]
 position = Vector2( 844, 172 )
 
 [node name="Strip8" type="Area2D" parent="Stripes" groups=["Strip"]]
@@ -142,7 +142,7 @@ collision_layer = 2
 position = Vector2( 966, 359 )
 shape = SubResource( 3 )
 
-[node name="Flouer7" parent="Stripes/Strip8" instance=ExtResource( 2 )]
+[node name="Flower7" parent="Stripes/Strip8" instance=ExtResource( 2 )]
 position = Vector2( 977, 438 )
 
 [node name="Strip9" type="Area2D" parent="Stripes" groups=["Strip"]]
@@ -159,7 +159,7 @@ collision_layer = 2
 position = Vector2( 1218, 359 )
 shape = SubResource( 3 )
 
-[node name="Flouer8" parent="Stripes/Strip10" instance=ExtResource( 2 )]
+[node name="Flower8" parent="Stripes/Strip10" instance=ExtResource( 2 )]
 position = Vector2( 1235, 406 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
