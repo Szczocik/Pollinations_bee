@@ -5,6 +5,7 @@ export (PackedScene) var World_scene
 onready var player = $Player
 onready var Stripes = $Stripes.get_children()
 onready var pollination_effect = $EffectsLayer/Pollination
+export (PackedScene) var flower = preload("res://Flower/Flower.tscn")
 
 
 var Flower_curr = []
@@ -33,7 +34,8 @@ func _on_CountdownTimer_timeout():
 		print(curr, ", ", Stripes[curr])
 		Flower_curr.push_front(Stripes[curr])
 		Flower_curr.remove(1)
-		print(curr)				
+		#print(flower_pos.position.distance_to(player))
+			
 	
 	
 	
