@@ -36,10 +36,6 @@ func _on_CountdownTimer_timeout():
 		Flower_curr.remove(1)
 	
 		#print(flower_pos.position.distance_to(player))
-			
-	
-	
-	
 		
 	$CountdownLabel.visible = false
 	$Player.block = true
@@ -51,7 +47,6 @@ func _on_CountdownTimer_timeout():
 	MusicController.reset_volume()
 	
 	get_tree().call_group("flower", "start_move")
-	
 	
 func get_closest_flower():
 	var min_dist = 99999
@@ -68,7 +63,6 @@ func get_closest_flower():
 func _on_StopTimer_timeout():
 	pass
 	
-
 func curr_strip():
 	var no = -1
 	for strip in Stripes:
@@ -81,9 +75,3 @@ func curr_strip():
 			no = -1
 	return no
 	
-
-	
-
-
-
-
