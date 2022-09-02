@@ -8,8 +8,6 @@
 script/source = "extends Area2D
 
 
-export (PackedScene) var Flower
-
 onready var light = $Light2D
 onready var pollination = $Pollination
 
@@ -27,9 +25,6 @@ func start_move():
 
 func pollition_effect():
 	$Pollination.emitting = true
-
-func take_position(location):
-	pass
 "
 
 [sub_resource type="CircleShape2D" id=4]
