@@ -7,7 +7,6 @@
 [sub_resource type="GDScript" id=6]
 script/source = "extends Area2D
 
-signal flower_position(location)
 
 export (PackedScene) var Flower
 
@@ -30,7 +29,7 @@ func pollition_effect():
 	$Pollination.emitting = true
 
 func take_position(location):
-	emit_signal(\"flower_position\", global_position)
+	pass
 "
 
 [sub_resource type="CircleShape2D" id=4]
