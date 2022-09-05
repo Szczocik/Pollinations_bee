@@ -4,15 +4,21 @@ export (PackedScene) var World_scene
 
 
 onready var player = $Player
-onready var Stripes = $Stripes.get_children()
+var Stripes = []
 onready var player2 = $Player2
 onready var pollination_effect = $EffectsLayer/Pollination
 export (PackedScene) var flower = preload("res://Flower/Flower.tscn")
 
 
-var Flower_curr = []
+var Flowers = []
 
 func _ready():
+	for child in get_children():
+		if "Strip" in child.get_name():
+			Stripes.append(child)
+	for stripe in Stripes:
+		print(stripe.get_node("Flower"))
+		Flowers.append(stripe.get_node("Flower"))
 	MusicController.play_music()
 	$MusicTimer.start()
 	 
@@ -31,10 +37,10 @@ func _on_CountdownTimer_timeout():
 	var curr = curr_strip()
 	var min_flower = get_closest_flower()
 	if curr >= 0:
-		print(min_flower)
+		
 		print(curr, ", ", Stripes[curr])
-		Flower_curr.push_front(Stripes[curr])
-		Flower_curr.remove(1)
+		#Flower_curr.push_front(Stripes[curr])
+		#Flower_curr.remove(1)
 	
 	
 		
@@ -75,4 +81,9 @@ func curr_strip():
 		if no == Stripes.size() - 1:
 			no = -1
 	return no
+	
+func get_flower():
+	var curr = curr_strip()
+	print("LALALA", curr, " ", Stripes[curr], " ", Stripes[curr].get_node("CollisionShape2D"))
+	return Stripes[curr].get_node("Flower")
 	
