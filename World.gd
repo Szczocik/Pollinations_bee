@@ -4,21 +4,25 @@ export (PackedScene) var World_scene
 
 
 onready var player = $Player
-var Stripes = []
 onready var player2 = $Player2
 onready var pollination_effect = $EffectsLayer/Pollination
 export (PackedScene) var flower = preload("res://Flower/Flower.tscn")
 
-
+var Stripes = []
 var Flowers = []
 
 func _ready():
-	for child in get_children():
+	for child in $Stripes.get_children():
 		if "Strip" in child.get_name():
 			Stripes.append(child)
 	for stripe in Stripes:
-		print(stripe.get_node("Flower"))
-		Flowers.append(stripe.get_node("Flower"))
+		var has_flower = false
+		for sch in stripe.get_children():
+			if "Flower" in sch.get_name():
+				Flowers.append(sch)
+				has_flower = true
+		if not has_flower:
+			Flowers.append(null)
 	MusicController.play_music()
 	$MusicTimer.start()
 	 
@@ -35,7 +39,7 @@ func _on_MusicTimer_timeout():
 func _on_CountdownTimer_timeout():
 	
 	var curr = curr_strip()
-	var min_flower = get_closest_flower()
+	# var min_flower = get_closest_flower()
 	if curr >= 0:
 		
 		print(curr, ", ", Stripes[curr])
@@ -48,11 +52,11 @@ func _on_CountdownTimer_timeout():
 	$Player.block = true
 	get_closest_flower()
 	# get_tree().call_group("flower", "light_off")
-	get_tree().call_group("player", "pollition_effect")
-	$Player/ShakeAnimation.play("shake")
+	# get_tree().call_group("player", "pollition_effect")
+	# $Player/ShakeAnimation.play("shake")
 	
 	MusicController.reset_volume()
-	
+		
 	# get_tree().call_group("flower", "start_move")
 	
 func get_closest_flower():
@@ -84,6 +88,5 @@ func curr_strip():
 	
 func get_flower():
 	var curr = curr_strip()
-	print("LALALA", curr, " ", Stripes[curr], " ", Stripes[curr].get_node("CollisionShape2D"))
-	return Stripes[curr].get_node("Flower")
+	return Flowers[curr]
 	

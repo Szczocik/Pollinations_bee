@@ -35,12 +35,17 @@ func _look_at_mouse():
 	
 func _move_to_flower():
 	var flower = get_parent().get_flower()
-	
-	if position.distance_to(flower.position) > stop_distance:
-		var direction = flower.position - position
-		var normalized_direction = direction.normalized()
-		var direction_distance = direction.length()
-		move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))
+	if flower != null:
+		if position.distance_to(flower.position) > stop_distance:
+			var direction = flower.position - position
+			var normalized_direction = direction.normalized()
+			var direction_distance = direction.length()
+			move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))
+			
+	else:
+		# Brak kwiatka
+		pass
+		
 		
 func pollition_effect():
 	$Pollination.emitting = true
