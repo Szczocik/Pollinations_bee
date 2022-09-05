@@ -5,14 +5,15 @@ class_name Player
 export (int) var min_move_speed = 100
 export (int) var max_move_speed = 250
 export (int) var stop_distance = 20
+export (PackedScene) var flower = preload("res://Flower/Flower.tscn")
 
 var block = false
 
 
 func _physics_process(_delta):
 	if block:
-		#_move_to_flower()
-		queue_free()
+		_move_to_flower()
+		#queue_free()
 		return
 	process_mouse()
 		

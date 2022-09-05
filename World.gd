@@ -36,7 +36,7 @@ func _on_CountdownTimer_timeout():
 		Flower_curr.push_front(Stripes[curr])
 		Flower_curr.remove(1)
 	
-		#print(flower_pos.position.distance_to(player))
+	
 		
 	$CountdownLabel.visible = false
 	$Player.block = true

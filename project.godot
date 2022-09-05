@@ -27,6 +27,7 @@ config/icon="res://icon.png"
 [autoload]
 
 MusicController="*res://SFX/MusicController.tscn"
+Flower="*res://Flower/Flower.tscn"
 
 [display]
 
