@@ -11,7 +11,8 @@ var block = false
 
 func _physics_process(_delta):
 	if block:
-		_move_to_flower()
+		#_move_to_flower()
+		queue_free()
 		return
 	process_mouse()
 		

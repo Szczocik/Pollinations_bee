@@ -10,7 +10,6 @@ export (PackedScene) var flower = preload("res://Flower/Flower.tscn")
 
 var Flower_curr = []
 
-
 func _ready():
 	MusicController.play_music()
 	$MusicTimer.start()
@@ -40,13 +39,13 @@ func _on_CountdownTimer_timeout():
 	$CountdownLabel.visible = false
 	$Player.block = true
 	get_closest_flower()
-	get_tree().call_group("flower", "light_off")
+	# get_tree().call_group("flower", "light_off")
 	get_tree().call_group("player", "pollition_effect")
 	$Player/ShakeAnimation.play("shake")
 	
 	MusicController.reset_volume()
 	
-	get_tree().call_group("flower", "start_move")
+	# get_tree().call_group("flower", "start_move")
 	
 func get_closest_flower():
 	var min_dist = 99999
