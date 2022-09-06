@@ -37,12 +37,12 @@ func _on_MusicTimer_timeout():
 	get_tree().call_group("flower", "stop_move")
 	
 func _on_CountdownTimer_timeout():
-		
+	
 	$CountdownLabel.visible = false
 	$Player.block = true
+	
 	# get_tree().call_group("flower", "light_off")
-	# get_tree().call_group("player", "pollition_effect")
-	# $Player/ShakeAnimation.play("shake")
+	
 	
 	MusicController.reset_volume()
 		

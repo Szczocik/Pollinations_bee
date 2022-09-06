@@ -16,6 +16,7 @@ func _physics_process(_delta):
 		#queue_free()
 		return
 	process_mouse()
+
 		
 func process_mouse():
 	var target = get_viewport().get_mouse_position().x
@@ -46,7 +47,7 @@ func _move_to_flower():
 		# Brak kwiatka
 		pass
 		
-		
+
 func pollition_effect():
 	$Pollination.emitting = true
 	
