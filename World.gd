@@ -37,20 +37,9 @@ func _on_MusicTimer_timeout():
 	get_tree().call_group("flower", "stop_move")
 	
 func _on_CountdownTimer_timeout():
-	
-	var curr = curr_strip()
-	# var min_flower = get_closest_flower()
-	if curr >= 0:
-		
-		print(curr, ", ", Stripes[curr])
-		#Flower_curr.push_front(Stripes[curr])
-		#Flower_curr.remove(1)
-	
-	
 		
 	$CountdownLabel.visible = false
 	$Player.block = true
-	get_closest_flower()
 	# get_tree().call_group("flower", "light_off")
 	# get_tree().call_group("player", "pollition_effect")
 	# $Player/ShakeAnimation.play("shake")
@@ -59,17 +48,6 @@ func _on_CountdownTimer_timeout():
 		
 	# get_tree().call_group("flower", "start_move")
 	
-func get_closest_flower():
-	var min_dist = 99999
-	var min_flower
-	var flowers = get_tree().get_nodes_in_group("flower")
-	for flower in flowers:
-		var dist = $Player.position.distance_to(flower.position)
-		if (dist < min_dist):
-			min_dist = dist
-			min_flower = flower
-	print(min_flower)
-	return min_flower
 		
 func _on_StopTimer_timeout():
 	pass
