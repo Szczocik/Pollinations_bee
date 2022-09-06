@@ -175,8 +175,12 @@ wait_time = 5.0
 one_shot = true
 
 [node name="StopTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.0
+one_shot = true
+
+[node name="RestartMusicTimer" type="Timer" parent="."]
 
 [connection signal="timeout" from="MusicTimer" to="." method="_on_MusicTimer_timeout"]
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_CountdownTimer_timeout"]
 [connection signal="timeout" from="StopTimer" to="." method="_on_StopTimer_timeout"]
+[connection signal="timeout" from="RestartMusicTimer" to="." method="_on_RestartMusicTimer_timeout"]

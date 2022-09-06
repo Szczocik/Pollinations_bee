@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-class_name Player
 
 export (int) var min_move_speed = 100
 export (int) var max_move_speed = 250
@@ -8,7 +7,6 @@ export (int) var stop_distance = 20
 export (PackedScene) var flower = preload("res://Flower/Flower.tscn")
 
 var block = false
-
 
 func _physics_process(_delta):
 	if block:
@@ -51,6 +49,7 @@ func _move_to_flower():
 func pollition_effect():
 	$Pollination.emitting = true
 	$ShakeAnimation.play("shake")
+	
 	
 func _on_Pollination_Timer_timeout():
 	pollition_effect()
