@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 
-export (int) var min_move_speed = 100
-export (int) var max_move_speed = 250
+export (int) var min_move_speed = 200
+export (int) var max_move_speed = 350
 export (int) var stop_distance = 20
 export (PackedScene) var flower = preload("res://Flower/Flower.tscn")
 
@@ -33,7 +33,7 @@ func _look_at_mouse():
 	rotation_degrees = rotation_degrees + 90
 	
 func _move_to_flower():
-	var flower = get_parent().get_flower()
+	flower = get_parent().get_flower()
 	if flower != null:
 		if position.distance_to(flower.position) > stop_distance:
 			var direction = flower.position - position
@@ -44,7 +44,15 @@ func _move_to_flower():
 	else:
 		# Brak kwiatka
 		pass
-		
+
+func move_back():
+	var position_new = Vector2(flower.position.x, 630)
+	if position.distance_to(position_new) > stop_distance:
+		var direction = position_new - position
+		var normalized_direction = direction.normalized()
+		var direction_distance = direction.length()
+		move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))		
+
 
 func pollition_effect():
 	$Pollination.emitting = true
