@@ -13,7 +13,7 @@ var block = false
 func _physics_process(_delta):
 	if block:
 		_move_to_flower()
-		#queue_free()
+		$Pollination_Timer.start()
 		return
 	process_mouse()
 
@@ -50,4 +50,9 @@ func _move_to_flower():
 
 func pollition_effect():
 	$Pollination.emitting = true
+	$ShakeAnimation.play("shake")
 	
+func _on_Pollination_Timer_timeout():
+	pollition_effect()
+
+
