@@ -40,19 +40,18 @@ func _move_to_flower():
 			var normalized_direction = direction.normalized()
 			var direction_distance = direction.length()
 			move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))
-			
 	else:
 		# Brak kwiatka
 		pass
 
 func move_back():
-	var position_new = Vector2(flower.position.x, 630)
-	if position.distance_to(position_new) > stop_distance:
-		var direction = position_new - position
+	var position_new = Vector2(640, 630)
+	if global_position.distance_to(position_new) > stop_distance:
+		var direction = position_new - global_position
 		var normalized_direction = direction.normalized()
 		var direction_distance = direction.length()
 		move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))		
-
+		
 
 func pollition_effect():
 	$Pollination.emitting = true

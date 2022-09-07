@@ -163,7 +163,7 @@ shape = SubResource( 3 )
 position = Vector2( 1235, 406 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 683, 630 )
+position = Vector2( 640, 630 )
 z_index = 1
 
 [node name="MusicTimer" type="Timer" parent="."]
