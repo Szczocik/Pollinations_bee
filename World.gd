@@ -41,10 +41,7 @@ func _on_CountdownTimer_timeout():
 	$StopTimer.start()
 		
 func _on_StopTimer_timeout():
-	#get_tree().call_group("player", "_on_Pollination_Timer_timeout")
 	$RestartMusicTimer.start()
-	
-	
 	
 func _on_RestartMusicTimer_timeout():
 	$Player.position = Vector2(640,630)
@@ -69,7 +66,3 @@ func curr_strip():
 func get_flower():
 	var curr = curr_strip()
 	return Flowers[curr]
-	
-
-
-
