@@ -11,7 +11,6 @@ var block = false
 func _physics_process(_delta):
 	if block:
 		_move_to_flower()
-		$Pollination_Timer.start()
 		return
 	process_mouse()
 

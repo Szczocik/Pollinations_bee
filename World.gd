@@ -37,20 +37,19 @@ func _on_MusicTimer_timeout():
 	
 func _on_CountdownTimer_timeout():
 	$Player.block = true
-	$StopTimer.start()
 	$CountdownLabel.visible = false
-	
+	$StopTimer.start()
 		
 func _on_StopTimer_timeout():
-	get_tree().call_group("player", "pollition_effect")
+	get_tree().call_group("player", "_on_Pollination_Timer_timeout")
 	$RestartMusicTimer.start()
 	
 func _on_RestartMusicTimer_timeout():
-	get_tree().call_group("player", "pollition_effect_stop")
+	get_tree().call_group("player", "move_back")
 	get_tree().call_group("flower", "light_off")
 	MusicController.reset_volume()
 	get_tree().call_group("flower", "start_move")
-	get_tree().call_group("player", "move_back")
+	
 	$MusicTimer.start()
 	
 func curr_strip():
