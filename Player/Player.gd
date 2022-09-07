@@ -42,7 +42,7 @@ func _move_to_flower():
 			_on_Timer_timeout()
 	else:
 		# Brak kwiatka
-		pass
+		pass	
 		
 func restart():
 	position = Vector2(global_position.x,630)
@@ -57,8 +57,3 @@ func _on_Timer_timeout():
 func _on_Pollination_Timer_timeout():
 	$Pollination/FlowerOK.play()
 	pollition_effect()
-
-
-
-
-
