@@ -39,6 +39,7 @@ func _move_to_flower():
 			var normalized_direction = direction.normalized()
 			var direction_distance = direction.length()
 			move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))
+			_on_Timer_timeout()
 	else:
 		# Brak kwiatka
 		pass
@@ -51,13 +52,26 @@ func move_back():
 		var direction_distance = direction.length()
 		move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))		
 		
+func restart():
+	position = Vector2(640,630)
+
+
 
 func pollition_effect():
 	$Pollination.emitting = true
 	$ShakeAnimation.play("shake")
-	
-	
+
+func pollition_effect_stop():
+	$Pollination.emitting = false
+	$ShakeAnimation.stop()
+
+func _on_Timer_timeout():
+	$Pollination_Timer.start()
+
 func _on_Pollination_Timer_timeout():
 	pollition_effect()
+
+
+
 
 
