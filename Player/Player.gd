@@ -45,7 +45,7 @@ func _move_to_flower():
 		pass
 		
 func restart():
-	position = Vector2(640,630)
+	position = Vector2(global_position.x,630)
 
 func pollition_effect():
 	$Pollination.emitting = true
@@ -53,8 +53,9 @@ func pollition_effect():
 
 func _on_Timer_timeout():
 	$Pollination_Timer.start()
-
+	
 func _on_Pollination_Timer_timeout():
+	$Pollination/FlowerOK.play()
 	pollition_effect()
 
 
