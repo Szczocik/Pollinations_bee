@@ -2,7 +2,6 @@ extends Node
 
 var music = load("res://SFX/Chiptune_Adventures_1.ogg")
 
-	
 func play_music():
 	$Music.stream = music
 	$Music.play()

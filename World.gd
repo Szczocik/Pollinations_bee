@@ -2,7 +2,6 @@ extends Node2D
 
 export (PackedScene) var World_scene
 
-
 onready var player = $Player
 onready var pollination_effect = $EffectsLayer/Pollination
 export (PackedScene) var flower = preload("res://Flower/Flower.tscn")

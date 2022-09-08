@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-
 export (int) var min_move_speed = 200
 export (int) var max_move_speed = 350
 export (int) var stop_distance = 20
@@ -13,7 +12,6 @@ func _physics_process(_delta):
 		_move_to_flower()
 		return
 	process_mouse()
-
 		
 func process_mouse():
 	var target = get_viewport().get_mouse_position().x
@@ -25,12 +23,7 @@ func process_mouse():
 	elif position.x > target:
 		if not test_move(Transform2D(transform), Vector2(-1,0)):
 			position.x = max(target, bee_width)
-		
-
-func _look_at_mouse():
-	look_at(get_global_mouse_position())
-	rotation_degrees = rotation_degrees + 90
-	
+			
 func _move_to_flower():
 	flower = get_parent().get_flower()
 	if flower != null:
