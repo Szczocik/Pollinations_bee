@@ -2,6 +2,8 @@ extends Node2D
 
 export (PackedScene) var World_scene
 
+onready var gui_layer = $GUILayer
+onready var hud = $GUILayer/HUD
 onready var player = $Player
 onready var pollination_effect = $EffectsLayer/Pollination
 export (PackedScene) var flower = preload("res://Flower/Flower.tscn")
@@ -23,6 +25,7 @@ func _ready():
 			Flowers.append(null)
 	MusicController.play_music()
 	$MusicTimer.start()
+	hud.update_flowers(0)
 	 
 func _process(_delta):
 	$CountdownLabel.text = str(int($CountdownTimer.time_left) +1)

@@ -183,7 +183,9 @@ one_shot = true
 wait_time = 5.0
 one_shot = true
 
-[node name="HUD" parent="." instance=ExtResource( 4 )]
+[node name="GUILayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="GUILayer" instance=ExtResource( 4 )]
 
 [connection signal="timeout" from="MusicTimer" to="." method="_on_MusicTimer_timeout"]
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_CountdownTimer_timeout"]
