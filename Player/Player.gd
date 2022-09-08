@@ -36,9 +36,6 @@ func _move_to_flower():
 	else:
 		# Brak kwiatka
 		pass	
-		
-func restart():
-	position = Vector2(global_position.x,630)
 
 func pollition_effect():
 	$Pollination.emitting = true
