@@ -3,7 +3,7 @@ extends KinematicBody2D
 export (int) var min_move_speed = 200
 export (int) var max_move_speed = 350
 export (int) var stop_distance = 20
-export (int) var score = 3
+export (int) var score = 0
 export (int) var lost = 1 
 export (PackedScene) var flower = preload("res://Flower/Flower.tscn")
 
@@ -37,13 +37,10 @@ func _move_to_flower():
 			_on_Timer_timeout()
 	else:
 		# Brak kwiatka
-		pass	
+		pass
 
 func add_score():
 	score += 1
-	
-func down_score():
-	score -= 1
 	
 func pollition_effect():
 	$Pollination.emitting = true
