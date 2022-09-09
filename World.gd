@@ -25,7 +25,7 @@ func _ready():
 			Flowers.append(null)
 	MusicController.play_music()
 	$MusicTimer.start()
-	hud.update_flowers(0)
+	hud.update_flowers($Player.score)
 	 
 func _process(_delta):
 	$CountdownLabel.text = str(int($CountdownTimer.time_left) +1)
