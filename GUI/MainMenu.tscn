@@ -86,7 +86,7 @@ custom_fonts/font = SubResource( 2 )
 text = "QUIT"
 
 [node name="Particles2D" type="Particles2D" parent="."]
-position = Vector2( 640, 380 )
+position = Vector2( 640, 403 )
 amount = 200
 lifetime = 3.0
 preprocess = 5.0
