@@ -41,7 +41,7 @@ func _move_to_flower():
 
 func add_score():
 	score += 1
-	if score >= 1:
+	if score >= 5:
 		$MenuTimer.start()
 	
 func pollition_effect():
@@ -55,7 +55,6 @@ func _on_Timer_timeout():
 func _on_Pollination_Timer_timeout():
 	$Pollination/FlowerOK.play()
 	pollition_effect()
-
 
 func _on_MenuTimer_timeout():
 	get_tree().change_scene("res://GUI/MainMenu.tscn")
