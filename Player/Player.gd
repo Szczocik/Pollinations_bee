@@ -45,10 +45,10 @@ func add_score():
 func down_score():
 	score -= 1
 	
-
 func pollition_effect():
 	$Pollination.emitting = true
 	$ShakeAnimation.play("shake")
+	add_score()
 
 func _on_Timer_timeout():
 	$Pollination_Timer.start()

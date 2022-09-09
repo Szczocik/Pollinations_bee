@@ -185,7 +185,7 @@ one_shot = true
 
 [node name="GUILayer" type="CanvasLayer" parent="."]
 
-[node name="HUD" parent="GUILayer" instance=ExtResource( 4 )]
+[node name="HUD" parent="GUILayer" groups=["hud"] instance=ExtResource( 4 )]
 
 [connection signal="timeout" from="MusicTimer" to="." method="_on_MusicTimer_timeout"]
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_CountdownTimer_timeout"]
