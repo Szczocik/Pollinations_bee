@@ -28,16 +28,12 @@ func process_mouse():
 			
 func _move_to_flower():
 	flower = get_parent().get_flower()
-	if flower != null:
-		if position.distance_to(flower.position) > stop_distance:
-			var direction = flower.position - position
-			var normalized_direction = direction.normalized()
-			var direction_distance = direction.length()
-			move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))
-			_on_Timer_timeout()
-	else:
-		# Brak kwiatka
-		pass
+	if position.distance_to(flower.position) > stop_distance:
+		var direction = flower.position - position
+		var normalized_direction = direction.normalized()
+		var direction_distance = direction.length()
+		move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))
+		_on_Timer_timeout()
 
 func _move_to_back():
 	flower = get_parent().get_flower()
