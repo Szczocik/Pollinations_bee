@@ -48,6 +48,7 @@ func _move_back():
 		var direction_distance = direction.length()
 		move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))
 	print(pos)
+	
 
 func add_score():
 	score += 1
