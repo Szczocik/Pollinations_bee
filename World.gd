@@ -47,7 +47,8 @@ func _on_StopTimer_timeout():
 	$RestartMusicTimer.start()
 	
 func _on_RestartMusicTimer_timeout():
-	$Player.position = Vector2(640,630)
+	#$Player.position = Vector2(640,630)
+	#get_tree().call_group("player", "_move_back")
 	$Player.block = false
 	get_tree().call_group("flower", "light_off")
 	MusicController.reset_volume()

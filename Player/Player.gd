@@ -39,15 +39,15 @@ func _move_to_flower():
 		# Brak kwiatka
 		pass
 
-func _move_to_():
+func _move_back():
 	flower = get_parent().get_flower()
-	if position.distance_to(flower.position) > stop_distance:
-		var direction = flower.position - position
+	var pos = Vector2(flower.position.x, 630)
+	if position.distance_to(pos) > stop_distance:
+		var direction = pos - position
 		var normalized_direction = direction.normalized()
 		var direction_distance = direction.length()
 		move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))
-		_on_Timer_timeout()
-
+	print(pos)
 
 func add_score():
 	score += 1
@@ -68,3 +68,4 @@ func _on_Pollination_Timer_timeout():
 
 func _on_MenuTimer_timeout():
 	get_tree().change_scene("res://GUI/MainMenu.tscn")
+	
