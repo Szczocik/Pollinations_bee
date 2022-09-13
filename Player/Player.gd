@@ -10,14 +10,16 @@ export (PackedScene) var flower = preload("res://Flower/Flower.tscn")
 var block = false
 var back = false
 
+
 func _physics_process(_delta):
 	if block:
 		_move_to_flower()
-	process_mouse()
-	
+		return
 	if back:
 		_move_back()
+		return
 	process_mouse()
+
 		
 func process_mouse():
 	var target = get_viewport().get_mouse_position().x
