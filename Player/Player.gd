@@ -42,14 +42,15 @@ func _move_to_flower():
 			move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))
 			_on_Timer_timeout()
 			
+			
 	else:
 		# Brak kwiatka
 		pass
 
 func _move_back():
 	flower = get_parent().get_flower()
-	var pos = Vector2(flower.position.x, 630)
 	if flower != null:
+		var pos = Vector2(flower.position.x, 630)
 		if position.distance_to(pos) > stop_distance:
 			var direction = pos - position
 			var normalized_direction = direction.normalized()
@@ -71,6 +72,7 @@ func pollition_effect():
 
 func _on_Timer_timeout():
 	$Pollination_Timer.start()
+	
 
 	
 func _on_Pollination_Timer_timeout():
