@@ -53,7 +53,6 @@ func _on_RestartMusicTimer_timeout():
 	get_tree().call_group("flower", "light_off")
 	MusicController.reset_volume()
 	get_tree().call_group("flower", "start_move")
-	
 	$MusicTimer.start()
 	
 func curr_strip():

@@ -49,12 +49,15 @@ func _move_to_flower():
 func _move_back():
 	flower = get_parent().get_flower()
 	var pos = Vector2(flower.position.x, 630)
-	if position.distance_to(pos) > stop_distance:
-		var direction = pos - position
-		var normalized_direction = direction.normalized()
-		var direction_distance = direction.length()
-		move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))
-	
+	if flower != null:
+		if position.distance_to(pos) > stop_distance:
+			var direction = pos - position
+			var normalized_direction = direction.normalized()
+			var direction_distance = direction.length()
+			move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))
+	else:
+		# Brak kwiatka
+		pass
 
 func add_score():
 	score += 1
