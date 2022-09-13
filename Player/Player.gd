@@ -8,11 +8,15 @@ export (int) var lost = 1
 export (PackedScene) var flower = preload("res://Flower/Flower.tscn")
 
 var block = false
+var back = false
 
 func _physics_process(_delta):
 	if block:
 		_move_to_flower()
-		return
+	process_mouse()
+	
+	if back:
+		_move_back()
 	process_mouse()
 		
 func process_mouse():
@@ -35,6 +39,7 @@ func _move_to_flower():
 			var direction_distance = direction.length()
 			move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))
 			_on_Timer_timeout()
+			
 	else:
 		# Brak kwiatka
 		pass
@@ -47,7 +52,6 @@ func _move_back():
 		var normalized_direction = direction.normalized()
 		var direction_distance = direction.length()
 		move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))
-	print(pos)
 	
 
 func add_score():
@@ -62,6 +66,7 @@ func pollition_effect():
 
 func _on_Timer_timeout():
 	$Pollination_Timer.start()
+
 	
 func _on_Pollination_Timer_timeout():
 	$Pollination/FlowerOK.play()
