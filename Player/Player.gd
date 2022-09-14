@@ -20,7 +20,6 @@ func _physics_process(_delta):
 		return
 	process_mouse()
 
-		
 func process_mouse():
 	var target = get_viewport().get_mouse_position().x
 	var bee_width = get_node("CollisionShape2D").shape.extents.x
@@ -41,8 +40,6 @@ func _move_to_flower():
 			var direction_distance = direction.length()
 			move_and_slide(normalized_direction * max(min_move_speed,min(max_move_speed, direction_distance)))
 			_on_Timer_timeout()
-			
-			
 	else:
 		# Brak kwiatka
 		pass
@@ -72,8 +69,6 @@ func pollition_effect():
 
 func _on_Timer_timeout():
 	$Pollination_Timer.start()
-	
-
 	
 func _on_Pollination_Timer_timeout():
 	$Pollination/FlowerOK.play()
