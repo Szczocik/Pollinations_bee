@@ -16,7 +16,7 @@ func _physics_process(_delta):
 		return
 	if back:
 		_move_back()
-		return
+		return process_mouse()
 	process_mouse()
 
 func process_mouse():
