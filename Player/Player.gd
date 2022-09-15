@@ -10,7 +10,6 @@ export (PackedScene) var flower = preload("res://Flower/Flower.tscn")
 var block = false
 var back = false
 
-
 func _physics_process(_delta):
 	if block:
 		_move_to_flower()

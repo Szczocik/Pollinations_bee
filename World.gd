@@ -49,11 +49,11 @@ func _on_StopTimer_timeout():
 	
 func _on_RestartMusicTimer_timeout():
 	#$Player.position = Vector2(640,630)
-	$Player.block = false	
+	$Player.block = false
 	get_tree().call_group("flower", "light_off")
 	MusicController.reset_volume()
 	get_tree().call_group("flower", "start_move")
-	$RestartMusicTimer.start()
+	$MusicTimer.start()
 
 func curr_strip():
 	var no = -1
