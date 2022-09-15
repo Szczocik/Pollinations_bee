@@ -53,8 +53,8 @@ func _on_RestartMusicTimer_timeout():
 	get_tree().call_group("flower", "light_off")
 	MusicController.reset_volume()
 	get_tree().call_group("flower", "start_move")
-	$MusicTimer.start()
-	
+	$RestartMusicTimer.start()
+
 func curr_strip():
 	var no = -1
 	for strip in Stripes:
@@ -70,3 +70,6 @@ func curr_strip():
 func get_flower():
 	var curr = curr_strip()
 	return Flowers[curr]
+
+
+

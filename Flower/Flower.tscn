@@ -127,8 +127,12 @@ tracks/2/keys = {
 }
 
 [node name="Flower" type="Area2D" groups=["flower"]]
+position = Vector2( -50, 0 )
 scale = Vector2( 0.5, 0.5 )
 script = SubResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 1, 1, 0.0431373, 1 )
