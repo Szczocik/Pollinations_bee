@@ -46,7 +46,7 @@ func _move_to_flower():
 func _move_back():
 	flower = get_parent().get_flower()
 	if flower != null:
-		var pos = Vector2(flower.position.x, 630)
+		var pos = Vector2(global_position.x, 630)
 		if position.distance_to(pos) > stop_distance:
 			var direction = pos - position
 			var normalized_direction = direction.normalized()
