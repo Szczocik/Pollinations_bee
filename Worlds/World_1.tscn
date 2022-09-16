@@ -161,6 +161,8 @@ shape = SubResource( 3 )
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 640, 630 )
 z_index = 1
+score = 5
+flower = ExtResource( 3 )
 
 [node name="MusicTimer" type="Timer" parent="."]
 wait_time = 10.0

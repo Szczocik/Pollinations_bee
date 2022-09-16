@@ -80,11 +80,16 @@ one_shot = true
 [node name="Pollination_Timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="ChangeSceneTimer" type="Timer" parent="."]
+wait_time = 5.0
+
 [node name="MenuTimer" type="Timer" parent="."]
 wait_time = 5.0
+one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Pollination_Timer" to="." method="_on_Pollination_Timer_timeout"]
+[connection signal="timeout" from="ChangeSceneTimer" to="." method="_on_ChangeSceneTimer_timeout"]
 [connection signal="timeout" from="MenuTimer" to="." method="_on_MenuTimer_timeout"]
 
 [editable path="Pollination"]

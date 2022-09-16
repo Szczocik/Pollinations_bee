@@ -59,7 +59,9 @@ func _move_back():
 func add_score():
 	score += 1
 	if score >= 5:
-		$MenuTimer.start()
+		$ChangeSceneTimer.start()
+	if score >= 6:
+		$MenuTimer	
 	
 func pollition_effect():
 	$Pollination.emitting = true
@@ -75,4 +77,6 @@ func _on_Pollination_Timer_timeout():
 
 func _on_MenuTimer_timeout():
 	get_tree().change_scene("res://GUI/MainMenu.tscn")
-	
+
+func _on_ChangeSceneTimer_timeout():
+	get_tree().change_scene("res://Worlds/World_" + str(int(get_tree().current_scene.name) + 1) + ".tscn")
