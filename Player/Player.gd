@@ -61,7 +61,7 @@ func add_score():
 	if score >= 5:
 		$ChangeSceneTimer.start()
 	if score >= 6:
-		$MenuTimer	
+		$MenuTimer.start()	
 	
 func pollition_effect():
 	$Pollination.emitting = true
