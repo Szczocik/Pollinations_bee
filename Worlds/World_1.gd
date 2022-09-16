@@ -6,7 +6,7 @@ onready var gui_layer = $GUILayer
 onready var hud = $GUILayer/HUD
 onready var player = $Player
 onready var pollination_effect = $EffectsLayer/Pollination
-export (PackedScene) var flower = preload("res://Flower/Flower.tscn")
+export (PackedScene) var flower = preload("res://Flower/Flower1.tscn")
 
 var Stripes = []
 var Flowers = []
@@ -71,6 +71,3 @@ func get_flower():
 	var curr = curr_strip()
 	return Flowers[curr]
 	
-
-
-
