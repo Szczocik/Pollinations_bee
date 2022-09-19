@@ -184,6 +184,30 @@ one_shot = true
 
 [node name="HUD" parent="GUILayer" groups=["hud"] instance=ExtResource( 5 )]
 
+[node name="StartPositions" type="Node" parent="."]
+
+[node name="WormStart1" type="Position2D" parent="StartPositions"]
+position = Vector2( 201, -69 )
+
+[node name="WormStart2" type="Position2D" parent="StartPositions"]
+position = Vector2( 475, -65 )
+
+[node name="WormStart3" type="Position2D" parent="StartPositions"]
+position = Vector2( 821, -65 )
+
+[node name="WormStart4" type="Position2D" parent="StartPositions"]
+position = Vector2( 1095, -65 )
+
+[node name="WormTimer" type="Node" parent="."]
+
+[node name="Timer1" type="Timer" parent="WormTimer"]
+
+[node name="Timer2" type="Timer" parent="WormTimer"]
+
+[node name="Timer3" type="Timer" parent="WormTimer"]
+
+[node name="Timer4" type="Timer" parent="WormTimer"]
+
 [connection signal="timeout" from="MusicTimer" to="." method="_on_MusicTimer_timeout"]
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_CountdownTimer_timeout"]
 [connection signal="timeout" from="StopTimer" to="." method="_on_StopTimer_timeout"]
