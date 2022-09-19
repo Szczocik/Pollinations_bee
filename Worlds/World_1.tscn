@@ -188,20 +188,6 @@ one_shot = true
 
 [node name="HUD" parent="GUILayer" groups=["hud"] instance=ExtResource( 5 )]
 
-[node name="WormTimer" type="Node" parent="."]
-
-[node name="Timer1" type="Timer" parent="WormTimer"]
-autostart = true
-
-[node name="Timer2" type="Timer" parent="WormTimer"]
-autostart = true
-
-[node name="Timer3" type="Timer" parent="WormTimer"]
-autostart = true
-
-[node name="Timer4" type="Timer" parent="WormTimer"]
-autostart = true
-
 [node name="WormSpawner" type="Node" parent="."]
 script = ExtResource( 6 )
 worms = [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ) ]
@@ -226,8 +212,5 @@ position = Vector2( 1095, -65 )
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_CountdownTimer_timeout"]
 [connection signal="timeout" from="StopTimer" to="." method="_on_StopTimer_timeout"]
 [connection signal="timeout" from="RestartMusicTimer" to="." method="_on_RestartMusicTimer_timeout"]
-[connection signal="timeout" from="WormTimer/Timer1" to="." method="_on_Timer1_timeout"]
-[connection signal="timeout" from="WormTimer/Timer2" to="." method="_on_Timer2_timeout"]
-[connection signal="timeout" from="WormTimer/Timer3" to="." method="_on_Timer3_timeout"]
-[connection signal="timeout" from="WormTimer/Timer4" to="." method="_on_Timer4_timeout"]
+[connection signal="spawn_worm" from="WormSpawner" to="." method="spawn_worm"]
 [connection signal="timeout" from="WormSpawner/SpawnTimer" to="WormSpawner" method="_on_SpawnTimer_timeout"]

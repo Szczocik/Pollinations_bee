@@ -1,5 +1,7 @@
 extends Node
 
+signal spawn_worm(WormScene, location)
+
 export (Array, PackedScene) var worms
 
 onready var spawn_timer = $SpawnTimer
@@ -10,4 +12,9 @@ func _ready():
 	spawn_positions = $SpawnPositions.get_children()
 
 func _on_SpawnTimer_timeout():
-	pass # Replace with function body.
+	spawn_random_worm()
+
+func spawn_random_worm():
+	var rand_worm = worms[randi() % worms.size()]
+	var rand_index = randi() % spawn_positions.size()
+	emit_signal("spawn_worm", rand_worm, spawn_positions[rand_index].global_position)
