@@ -76,3 +76,7 @@ func spawn_worm(WormScene, location):
 	var worm = WormScene.instance()
 	add_child(worm)
 	worm.global_position = location
+
+
+func _on_DeathZone_area_entered(area):
+	area.queue_free()
