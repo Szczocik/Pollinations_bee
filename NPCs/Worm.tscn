@@ -7,7 +7,6 @@
 extents = Vector2( 15, 15 )
 
 [node name="Worm" type="Area2D" groups=["worms"]]
-position = Vector2( 179, 45 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true

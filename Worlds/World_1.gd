@@ -7,6 +7,7 @@ onready var hud = $GUILayer/HUD
 onready var player = $Player
 onready var pollination_effect = $EffectsLayer/Pollination
 export (PackedScene) var flower = preload("res://Flower/Flower1.tscn")
+const WORM = preload("res://NPCs/Worm.tscn")
 
 var Stripes = []
 var Flowers = []
@@ -71,3 +72,19 @@ func get_flower():
 	var curr = curr_strip()
 	return Flowers[curr]
 	
+	
+func worm_spawn(start_pos):
+	var worm = WORM.instance()
+	var worm_start_node_name = "StartPositions/WormStart" + str(start_pos)
+	worm.position = get_node(worm_start_node_name).position
+	add_child(worm)
+	
+	var timer_node_name = "WormTimer/Timer" + str(start_pos)
+	get_node(timer_node_name).wait_time = rand_range(10,10)
+	hud.update_flowers($Player.score)
+
+
+func _on_Timer1_timeout(): worm_spawn(1)
+func _on_Timer2_timeout(): worm_spawn(2)
+func _on_Timer3_timeout(): worm_spawn(3)
+func _on_Timer4_timeout(): worm_spawn(4)

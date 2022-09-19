@@ -1,10 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Worlds/World_1.gd" type="Script" id=1]
 [ext_resource path="res://kirifont/KiriFont.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Flower/Flower1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GUI/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Worlds/WormSpawner.gd" type="Script" id=6]
+[ext_resource path="res://NPCs/Worm1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://NPCs/Worm3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://NPCs/Worm2.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=4]
 size = 40
@@ -184,31 +188,46 @@ one_shot = true
 
 [node name="HUD" parent="GUILayer" groups=["hud"] instance=ExtResource( 5 )]
 
-[node name="StartPositions" type="Node" parent="."]
-
-[node name="WormStart1" type="Position2D" parent="StartPositions"]
-position = Vector2( 201, -69 )
-
-[node name="WormStart2" type="Position2D" parent="StartPositions"]
-position = Vector2( 475, -65 )
-
-[node name="WormStart3" type="Position2D" parent="StartPositions"]
-position = Vector2( 821, -65 )
-
-[node name="WormStart4" type="Position2D" parent="StartPositions"]
-position = Vector2( 1095, -65 )
-
 [node name="WormTimer" type="Node" parent="."]
 
 [node name="Timer1" type="Timer" parent="WormTimer"]
+autostart = true
 
 [node name="Timer2" type="Timer" parent="WormTimer"]
+autostart = true
 
 [node name="Timer3" type="Timer" parent="WormTimer"]
+autostart = true
 
 [node name="Timer4" type="Timer" parent="WormTimer"]
+autostart = true
+
+[node name="WormSpawner" type="Node" parent="."]
+script = ExtResource( 6 )
+worms = [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ) ]
+
+[node name="SpawnPositions" type="Node" parent="WormSpawner"]
+
+[node name="WormStart1" type="Position2D" parent="WormSpawner/SpawnPositions"]
+position = Vector2( 201, -69 )
+
+[node name="WormStart2" type="Position2D" parent="WormSpawner/SpawnPositions"]
+position = Vector2( 475, -65 )
+
+[node name="WormStart3" type="Position2D" parent="WormSpawner/SpawnPositions"]
+position = Vector2( 821, -65 )
+
+[node name="WormStart4" type="Position2D" parent="WormSpawner/SpawnPositions"]
+position = Vector2( 1095, -65 )
+
+[node name="SpawnTimer" type="Timer" parent="WormSpawner"]
 
 [connection signal="timeout" from="MusicTimer" to="." method="_on_MusicTimer_timeout"]
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_CountdownTimer_timeout"]
 [connection signal="timeout" from="StopTimer" to="." method="_on_StopTimer_timeout"]
 [connection signal="timeout" from="RestartMusicTimer" to="." method="_on_RestartMusicTimer_timeout"]
+[connection signal="timeout" from="WormTimer/Timer1" to="." method="_on_Timer1_timeout"]
+[connection signal="timeout" from="WormTimer/Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="timeout" from="WormTimer/Timer3" to="." method="_on_Timer3_timeout"]
+[connection signal="timeout" from="WormTimer/Timer4" to="." method="_on_Timer4_timeout"]
+[connection signal="timeout" from="WormSpawner/SpawnTimer" to="WormSpawner" method="_on_SpawnTimer_timeout"]

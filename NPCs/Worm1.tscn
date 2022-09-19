@@ -5,4 +5,4 @@
 [node name="Worm1" instance=ExtResource( 1 )]
 
 [node name="Sprite" parent="." index="1"]
-modulate = Color( 0.113725, 0.0901961, 0.882353, 1 )
+modulate = Color( 0.207843, 0.0901961, 0.882353, 1 )
