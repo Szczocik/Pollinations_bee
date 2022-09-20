@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Player
 
 export (int) var min_move_speed = 200
 export (int) var max_move_speed = 350
@@ -61,6 +62,11 @@ func add_score():
 	if score >= 5:
 		$ChangeSceneTimer.start()
 	if score >= 6:
+		$MenuTimer.start()	
+		
+func down_score():
+	score -= 1
+	if score >= 0:
 		$MenuTimer.start()	
 	
 func pollition_effect():

@@ -168,6 +168,7 @@ shape = SubResource( 3 )
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 640, 630 )
 z_index = 1
+score = 1
 flower = ExtResource( 3 )
 
 [node name="WormSpawner" type="Node" parent="."]

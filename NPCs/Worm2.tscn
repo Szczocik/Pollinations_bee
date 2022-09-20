@@ -7,3 +7,5 @@ speed = 75
 
 [node name="Sprite" parent="." index="1"]
 modulate = Color( 0.882353, 0.294118, 0.0901961, 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_Worm2_body_entered"]
