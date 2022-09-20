@@ -9,7 +9,6 @@ func _physics_process(delta):
 func _on_Worm2_body_entered(body):
 	if body is Player:
 		get_tree().call_group("player", "down_score")
-		queue_free()
 		
 func _on_Worm3_body_entered(body):
 	if body is Player:

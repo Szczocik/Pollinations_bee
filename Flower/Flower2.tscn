@@ -21,7 +21,7 @@ func stop_move():
 	$AnimationPlayer.stop(true)
 	
 func start_move():
-	$AnimationPlayer.play(\"move1\")
+	$AnimationPlayer.play(\"scaling\")
 
 func pollition_effect():
 	$Pollination.emitting = true
@@ -157,7 +157,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=8]
-resource_name = "skaling"
+resource_name = "scaling"
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -200,12 +200,12 @@ texture = ExtResource( 1 )
 shape = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "move1"
+autoplay = "scaling"
 anims/RESET = SubResource( 2 )
 anims/light = SubResource( 5 )
 anims/move = SubResource( 3 )
 anims/move1 = SubResource( 7 )
-anims/skaling = SubResource( 8 )
+anims/scaling = SubResource( 8 )
 
 [node name="Light2D" type="Light2D" parent="."]
 scale = Vector2( 1.33803, 1.27027 )
