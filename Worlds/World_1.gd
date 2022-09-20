@@ -26,10 +26,12 @@ func _ready():
 	MusicController.play_music()
 	$MusicTimer.start()
 	hud.update_flowers($Player.score)
+	hud.update_worms($Player.target)
 	
 func _process(_delta):
 	$CountdownLabel.text = str(int($CountdownTimer.time_left) +1)
 	hud.update_flowers($Player.score)
+	hud.update_worms($Player.target)
 	
 func _on_MusicTimer_timeout():
 	MusicController.turn_down_volume()

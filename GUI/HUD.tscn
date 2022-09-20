@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://sun1.png" type="Texture" id=1]
 [ext_resource path="res://GUI/HUD.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
@@ -20,5 +21,21 @@ margin_bottom = 98.0
 rect_min_size = Vector2( 0, 148 )
 rect_scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
+expand = true
+stretch_mode = 2
+
+[node name="WormTexture" type="TextureRect" parent="."]
+modulate = Color( 0.337255, 0.882353, 0.0901961, 1 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 520.0
+margin_top = -52.0
+margin_right = 520.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 0, 64 )
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
 expand = true
 stretch_mode = 2
