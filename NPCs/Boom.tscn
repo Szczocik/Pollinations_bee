@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://NPCs/Boom.gd" type="Script" id=1]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.00621118, 0.645963, 0.993789, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.112793, 0.717293, 0.902344, 1, 0.207843, 0.0901961, 0.882353, 1, 0.167702, 0.167702, 0.167702, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=1]
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 125.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 100.0
+damping_random = 0.5
+scale = 5.0
+color_ramp = SubResource( 3 )
+
+[node name="Boom" type="Particles2D"]
+emitting = false
+amount = 200
+lifetime = 0.5
+one_shot = true
+process_material = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
