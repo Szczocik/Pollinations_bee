@@ -5,7 +5,7 @@ export (int) var min_move_speed = 200
 export (int) var max_move_speed = 350
 export (int) var stop_distance = 20
 export (int) var score = 0
-export (int) var lost = 1 
+export (int) var target = 0 
 export (PackedScene) var flower = preload("res://Flower/Flower.tscn")
 
 var block = false
@@ -67,7 +67,17 @@ func add_score():
 func down_score():
 	score -= 1
 	if score >= 0:
-		$MenuTimer.start()	
+		$MenuTimer.start()
+		
+func add_point_target():
+	target += 1
+	if target == 3:
+		score += 1
+		reset_target()
+	print(target)
+		
+func reset_target():
+	target = 0
 	
 func pollition_effect():
 	$Pollination.emitting = true

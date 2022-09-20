@@ -4,3 +4,5 @@
 
 [node name="Worm3" instance=ExtResource( 1 )]
 speed = 100
+
+[connection signal="body_entered" from="." to="." method="_on_Worm3_body_entered"]
