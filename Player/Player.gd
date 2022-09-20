@@ -74,7 +74,6 @@ func add_point_target():
 	if target == 3:
 		score += 1
 		reset_target()
-	print(target)
 		
 func reset_target():
 	target = 0
