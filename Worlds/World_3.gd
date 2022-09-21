@@ -1,7 +1,5 @@
 extends Node2D
 
-export (PackedScene) var World_scene
-
 onready var gui_layer = $GUILayer
 onready var hud = $GUILayer/HUD
 onready var player = $Player
