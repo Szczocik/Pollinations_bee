@@ -6,7 +6,7 @@ onready var gui_layer = $GUILayer
 onready var hud = $GUILayer/HUD
 onready var player = $Player
 onready var pollination_effect = $EffectsLayer/Pollination
-export (PackedScene) var flower = preload("res://Flower/Flower2.tscn")
+export (Array, PackedScene) var flower
 
 var Stripes = []
 var Flowers = []
@@ -39,6 +39,7 @@ func _on_MusicTimer_timeout():
 	$CountdownLabel.visible = true
 	get_tree().call_group("flower", "light_on")
 	get_tree().call_group("flower", "stop_move")
+	get_tree().call_group("worms", "stop_move")
 	
 func _on_CountdownTimer_timeout():
 	$Player.block = true

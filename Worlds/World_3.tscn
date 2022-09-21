@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Worlds/World_3.gd" type="Script" id=1]
 [ext_resource path="res://kirifont/KiriFont.ttf" type="DynamicFontData" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://NPCs/Worm3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://NPCs/Worm2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Flower/Flower2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Flower/Flower.tscn" type="PackedScene" id=11]
 
 [sub_resource type="DynamicFont" id=4]
 size = 40
@@ -32,11 +33,12 @@ extents = Vector2( 704, 37.5 )
 
 [node name="World_3" type="Node2D"]
 script = ExtResource( 1 )
+flower = [ ExtResource( 11 ), ExtResource( 3 ), ExtResource( 10 ) ]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1280.0
 margin_bottom = 720.0
-color = Color( 0.87451, 0.0941176, 0.917647, 1 )
+color = Color( 0.917647, 0.345098, 0.0941176, 1 )
 
 [node name="CountdownLabel" type="Label" parent="."]
 visible = false
@@ -87,9 +89,6 @@ collision_layer = 2
 position = Vector2( 66.5, 360.75 )
 shape = SubResource( 3 )
 
-[node name="Flower2" parent="Stripes/Strip1" instance=ExtResource( 10 )]
-position = Vector2( 61, 258 )
-
 [node name="Strip2" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
 
@@ -97,12 +96,18 @@ collision_layer = 2
 position = Vector2( 195, 360 )
 shape = SubResource( 3 )
 
+[node name="Flower2" parent="Stripes/Strip2" instance=ExtResource( 10 )]
+position = Vector2( 195, 420 )
+
 [node name="Strip3" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip3"]
 position = Vector2( 327, 360 )
 shape = SubResource( 3 )
+
+[node name="Flower1" parent="Stripes/Strip3" instance=ExtResource( 3 )]
+position = Vector2( 327, 189 )
 
 [node name="Strip4" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
@@ -118,12 +123,18 @@ collision_layer = 2
 position = Vector2( 584, 360 )
 shape = SubResource( 3 )
 
+[node name="Flower2" parent="Stripes/Strip5" instance=ExtResource( 10 )]
+position = Vector2( 593, 126 )
+
 [node name="Strip6" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip6"]
 position = Vector2( 713, 361 )
 shape = SubResource( 3 )
+
+[node name="Flower1" parent="Stripes/Strip6" instance=ExtResource( 3 )]
+position = Vector2( 716, 423 )
 
 [node name="Strip7" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
@@ -139,12 +150,18 @@ collision_layer = 2
 position = Vector2( 966, 359 )
 shape = SubResource( 3 )
 
+[node name="Flower1" parent="Stripes/Strip8" instance=ExtResource( 3 )]
+position = Vector2( 968, 129 )
+
 [node name="Strip9" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip9"]
 position = Vector2( 1092, 358 )
 shape = SubResource( 3 )
+
+[node name="Flower2" parent="Stripes/Strip9" instance=ExtResource( 10 )]
+position = Vector2( 1094, 439 )
 
 [node name="Strip10" type="Area2D" parent="Stripes" groups=["Strip"]]
 position = Vector2( 0, 1 )
@@ -186,7 +203,7 @@ wait_time = 8.0
 one_shot = true
 
 [node name="CountdownTimer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 3.0
 one_shot = true
 
 [node name="StopTimer" type="Timer" parent="."]

@@ -16,8 +16,7 @@ func _on_Worm3_body_entered(body):
 
 func boom_effect():
 	$Boom.start()
-	
-	
+		
 func _on_Worm1_body_entered(body):
 	if body is Player:
 		boom_effect()
