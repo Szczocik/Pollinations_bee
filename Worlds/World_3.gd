@@ -6,7 +6,7 @@ onready var gui_layer = $GUILayer
 onready var hud = $GUILayer/HUD
 onready var player = $Player
 onready var pollination_effect = $EffectsLayer/Pollination
-export (PackedScene) var flower = preload("res://Flower/Flower3.tscn")
+export (PackedScene) var flower = preload("res://Flower/Flower2.tscn")
 
 var Stripes = []
 var Flowers = []
