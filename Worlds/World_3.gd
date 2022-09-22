@@ -8,6 +8,7 @@ export (Array, PackedScene) var flower
 
 var Stripes = []
 var Flowers = []
+var Flowers_only = []
 
 func _ready():
 	for child in $Stripes.get_children():
@@ -21,15 +22,27 @@ func _ready():
 				has_flower = true
 		if not has_flower:
 			Flowers.append(null)
+	check_flowers()
 	MusicController.play_music()
 	$MusicTimer.start()
 	hud.update_flowers($Player.score)
 	hud.update_worms($Player.target)
+	print(Flowers_only)
 	
 func _process(_delta):
 	$CountdownLabel.text = str(int($CountdownTimer.time_left) +1)
 	hud.update_flowers($Player.score)
 	hud.update_worms($Player.target)
+	
+func check_flowers():
+	for val in Flowers:
+		if val != null:
+			Flowers_only.append(val)
+		print(Flowers_only)
+	
+func light_flower():
+	var rand_flower = Flowers_only[randi() % Flowers_only.size()]
+	print(rand_flower)
 	
 func _on_MusicTimer_timeout():
 	MusicController.turn_down_volume()
@@ -38,6 +51,7 @@ func _on_MusicTimer_timeout():
 	get_tree().call_group("flower", "light_on")
 	get_tree().call_group("flower", "stop_move")
 	get_tree().call_group("worms", "stop_move")
+	light_flower()
 	
 func _on_CountdownTimer_timeout():
 	$Player.block = true
