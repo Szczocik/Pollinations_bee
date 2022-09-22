@@ -24,3 +24,4 @@ func _on_Worm1_body_entered(body):
 		boom_effect()
 		$SFX.play()
 		$Sprite.queue_free()
+		
