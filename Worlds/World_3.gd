@@ -1,5 +1,7 @@
 extends Node2D
 
+signal light_flower(FlowerScene, lokation)
+
 onready var gui_layer = $GUILayer
 onready var hud = $GUILayer/HUD
 onready var player = $Player
@@ -42,7 +44,6 @@ func check_flowers():
 	
 func light_flower():
 	var rand_flower = Flowers_only[randi() % Flowers_only.size()]
-	print(rand_flower)
 	
 func _on_MusicTimer_timeout():
 	MusicController.turn_down_volume()
