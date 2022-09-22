@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://NPCs/Boom.gd" type="Script" id=1]
+[ext_resource path="res://Effects/Boom.gd" type="Script" id=1]
 
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0, 0.00621118, 0.645963, 0.993789, 1 )
