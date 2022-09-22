@@ -29,7 +29,6 @@ func _ready():
 	$MusicTimer.start()
 	hud.update_flowers($Player.score)
 	hud.update_worms($Player.target)
-	print(Flowers_only)
 	
 func _process(_delta):
 	$CountdownLabel.text = str(int($CountdownTimer.time_left) +1)
@@ -40,7 +39,6 @@ func check_flowers():
 	for val in Flowers:
 		if val != null:
 			Flowers_only.append(val)
-		print(Flowers_only)
 	
 func light_flower():
 	var rand_flower = Flowers_only[randi() % Flowers_only.size()]

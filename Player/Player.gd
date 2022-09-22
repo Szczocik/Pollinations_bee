@@ -73,6 +73,7 @@ func add_point_target():
 	target += 1
 	if target == 3:
 		score += 1
+		$Pollination/FlowerOK.play()
 		reset_target()
 		
 func reset_target():
