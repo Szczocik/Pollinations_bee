@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Worlds/World_3.gd" type="Script" id=1]
 [ext_resource path="res://kirifont/KiriFont.ttf" type="DynamicFontData" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://NPCs/Worm3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://NPCs/Worm2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Flower/Flower2.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Flower/Flower.tscn" type="PackedScene" id=11]
 
 [sub_resource type="DynamicFont" id=4]
 size = 40
@@ -33,7 +32,7 @@ extents = Vector2( 704, 37.5 )
 
 [node name="World_3" type="Node2D"]
 script = ExtResource( 1 )
-flower = [ ExtResource( 11 ), ExtResource( 3 ), ExtResource( 10 ) ]
+flower = [ ExtResource( 3 ), ExtResource( 10 ) ]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1280.0
