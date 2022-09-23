@@ -189,10 +189,10 @@ worms = [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ) ]
 [node name="SpawnPositions" type="Node" parent="WormSpawner"]
 
 [node name="WormStart1" type="Position2D" parent="WormSpawner/SpawnPositions"]
-position = Vector2( 111, -73 )
+position = Vector2( 132, -67 )
 
 [node name="WormStart2" type="Position2D" parent="WormSpawner/SpawnPositions"]
-position = Vector2( 250, -102 )
+position = Vector2( 246, -104 )
 
 [node name="WormStart3" type="Position2D" parent="WormSpawner/SpawnPositions"]
 position = Vector2( 368, -63 )
