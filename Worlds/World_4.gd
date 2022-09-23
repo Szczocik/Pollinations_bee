@@ -41,7 +41,6 @@ func check_flowers():
 			Flowers_only.append(val)
 	
 func light_flower():
-	var light = flower.instance()
 	var rand_flower = Flowers_only[randi() % Flowers_only.size()]
 
 		
@@ -50,7 +49,7 @@ func _on_MusicTimer_timeout():
 	$CountdownTimer.start()
 	$CountdownLabel.visible = true
 	light_flower()
-	#get_tree().call_group("flower", "light_on")
+	get_tree().call_group("flower", "light_on")
 	get_tree().call_group("flower", "stop_move")
 	get_tree().call_group("worms", "stop_move")
 	
