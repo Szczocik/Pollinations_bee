@@ -37,7 +37,7 @@ flower = [ ExtResource( 3 ), ExtResource( 10 ) ]
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1280.0
 margin_bottom = 720.0
-color = Color( 0.917647, 0.345098, 0.0941176, 1 )
+color = Color( 0.941176, 0.0392157, 0.231373, 1 )
 
 [node name="CountdownLabel" type="Label" parent="."]
 visible = false
