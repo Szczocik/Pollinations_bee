@@ -49,8 +49,7 @@ func _on_MusicTimer_timeout():
 	MusicController.turn_down_volume()
 	$CountdownTimer.start()
 	$CountdownLabel.visible = true
-	light_flower()
-	#get_tree().call_group("flower", "light_on")
+	get_tree().call_group("flower", "light_on")
 	get_tree().call_group("flower", "stop_move")
 	get_tree().call_group("worms", "stop_move")
 	

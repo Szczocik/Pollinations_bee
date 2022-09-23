@@ -14,7 +14,7 @@ func _on_Worm3_body_entered(body):
 	if body is Player:
 		get_tree().call_group("player", "add_point_target")
 		$SFX.play()
-		$Sprite.queue_free()
+		$Sprite.visible = false
 
 func boom_effect():
 	$Boom.start()
@@ -23,4 +23,4 @@ func _on_Worm1_body_entered(body):
 	if body is Player:
 		boom_effect()
 		$SFX.play()
-		$Sprite.queue_free()
+		$Sprite.visible = false
