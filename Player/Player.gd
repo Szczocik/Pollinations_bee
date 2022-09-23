@@ -13,9 +13,11 @@ var back = false
 
 func _physics_process(_delta):
 	if block:
+		_look_at_flower()
 		_move_to_flower()
 		return
 	if back:
+		_look_at_flower()	
 		_move_back()
 		return process_mouse()
 	process_mouse()
@@ -31,6 +33,15 @@ func process_mouse():
 		if not test_move(Transform2D(transform), Vector2(-1,0)):
 			position.x = max(target, bee_width)
 			
+func	_look_at_flower():
+	flower = get_parent().get_flower()
+	if flower != null:
+		look_at(flower.position)
+		rotation_degrees = rotation_degrees + 90
+	else:
+		# Brak kwiatka
+		pass
+		
 func _move_to_flower():
 	flower = get_parent().get_flower()
 	if flower != null:

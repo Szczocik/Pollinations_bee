@@ -189,19 +189,25 @@ worms = [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ) ]
 [node name="SpawnPositions" type="Node" parent="WormSpawner"]
 
 [node name="WormStart1" type="Position2D" parent="WormSpawner/SpawnPositions"]
-position = Vector2( 64, -71 )
+position = Vector2( 111, -73 )
 
 [node name="WormStart2" type="Position2D" parent="WormSpawner/SpawnPositions"]
 position = Vector2( 250, -102 )
 
 [node name="WormStart3" type="Position2D" parent="WormSpawner/SpawnPositions"]
-position = Vector2( 525, -150 )
+position = Vector2( 368, -63 )
 
 [node name="WormStart4" type="Position2D" parent="WormSpawner/SpawnPositions"]
-position = Vector2( 837, -103 )
+position = Vector2( 640, -118 )
 
 [node name="WormStart5" type="Position2D" parent="WormSpawner/SpawnPositions"]
-position = Vector2( 1198, -139 )
+position = Vector2( 897, -65 )
+
+[node name="WormStart6" type="Position2D" parent="WormSpawner/SpawnPositions"]
+position = Vector2( 1043, -101 )
+
+[node name="WormStart7" type="Position2D" parent="WormSpawner/SpawnPositions"]
+position = Vector2( 1168, -67 )
 
 [node name="SpawnTimer" type="Timer" parent="WormSpawner"]
 autostart = true
