@@ -7,6 +7,8 @@ onready var hud = $GUILayer/HUD
 onready var player = $Player
 onready var pollination_effect = $EffectsLayer/Pollination
 export (Array, PackedScene) var flower
+export (PackedScene) var flower_light = preload("res://Flower/Flower1.tscn")
+
 
 var Stripes = []
 var Flowers = []
@@ -41,8 +43,11 @@ func check_flowers():
 			Flowers_only.append(val)
 	
 func light_flower():
+	flower = flower_light.instance()
 	var rand_flower = Flowers_only[randi() % Flowers_only.size()]
-
+	add_child(flower)
+	rand_flower = flower_light
+	
 func _on_MusicTimer_timeout():
 	MusicController.turn_down_volume()
 	$CountdownTimer.start()
