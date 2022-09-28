@@ -19,7 +19,7 @@ func _physics_process(_delta):
 	if back:
 		_look_at_flower()	
 		_move_back()
-		return process_mouse()
+		return
 	process_mouse()
 
 func process_mouse():
