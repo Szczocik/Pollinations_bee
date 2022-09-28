@@ -43,13 +43,13 @@ func _on_CountdownTimer_timeout():
 		
 func _on_StopTimer_timeout():
 	$Player.back = true
+	$BackTimer.start()
+	
+func _on_BackTimer_timeout():	
+	$Player.block = false
 	$RestartMusicTimer.start()
 	
 func _on_RestartMusicTimer_timeout():
-	$Player.block = false
-	$BackTimer.start()
-	
-func _on_BackTimer_timeout():
 	$Player.block = false
 	$Player.back = false
 		
