@@ -44,7 +44,6 @@ func light_flower():
 	var light = flower.instance()
 	var rand_flower = Flowers_only[randi() % Flowers_only.size()]
 
-		
 func _on_MusicTimer_timeout():
 	MusicController.turn_down_volume()
 	$CountdownTimer.start()
@@ -52,8 +51,7 @@ func _on_MusicTimer_timeout():
 	get_tree().call_group("flower", "light_on")
 	get_tree().call_group("flower", "stop_move")
 	get_tree().call_group("worms", "stop_move")
-	
-	
+		
 func _on_CountdownTimer_timeout():
 	$Player.block = true
 	$CountdownLabel.visible = false
@@ -99,6 +97,3 @@ func spawn_worm(WormScene, location):
 
 func _on_DeathZone_area_entered(area):
 	area.queue_free()
-
-
-
