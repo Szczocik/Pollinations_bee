@@ -50,6 +50,8 @@ func _on_StopTimer_timeout():
 func _on_RestartMusicTimer_timeout():
 	$Player.block = false
 	
+func _on_BackTimer_timeout():
+	
 	get_tree().call_group("flower", "light_off")
 	MusicController.reset_volume()
 	get_tree().call_group("flower", "start_move")
@@ -78,3 +80,6 @@ func spawn_worm(WormScene, location):
 
 func _on_DeathZone_area_entered(area):
 	area.queue_free()
+
+
+

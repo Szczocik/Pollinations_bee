@@ -211,6 +211,10 @@ one_shot = true
 wait_time = 5.0
 one_shot = true
 
+[node name="BackTimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
 [node name="GUILayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="GUILayer" groups=["hud"] instance=ExtResource( 5 )]
@@ -227,4 +231,5 @@ shape = SubResource( 5 )
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_CountdownTimer_timeout"]
 [connection signal="timeout" from="StopTimer" to="." method="_on_StopTimer_timeout"]
 [connection signal="timeout" from="RestartMusicTimer" to="." method="_on_RestartMusicTimer_timeout"]
+[connection signal="timeout" from="BackTimer" to="." method="_on_BackTimer_timeout"]
 [connection signal="area_entered" from="DeathZone" to="." method="_on_DeathZone_area_entered"]
