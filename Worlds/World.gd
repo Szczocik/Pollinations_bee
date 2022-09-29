@@ -73,6 +73,3 @@ func curr_strip():
 func get_flower():
 	var curr = curr_strip()
 	return Flowers[curr]
-
-
-

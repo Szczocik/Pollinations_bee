@@ -1,13 +1,10 @@
 extends Node2D
 
-signal light_flower(FlowerScene, lokation)
-
 onready var gui_layer = $GUILayer
 onready var hud = $GUILayer/HUD
 onready var player = $Player
 onready var pollination_effect = $EffectsLayer/Pollination
 export (Array, PackedScene) var flower
-
 
 var Stripes = []
 var Flowers = []
@@ -25,7 +22,7 @@ func _ready():
 				has_flower = true
 		if not has_flower:
 			Flowers.append(null)
-	check_flowers()
+#	check_flowers()
 	MusicController.play_music()
 	$MusicTimer.start()
 	hud.update_flowers($Player.score)
@@ -36,20 +33,18 @@ func _process(_delta):
 	hud.update_flowers($Player.score)
 	hud.update_worms($Player.target)
 	
-func check_flowers():
-	for val in Flowers:
-		if val != null:
-			Flowers_only.append(val)
+#func check_flowers():
+#	for val in Flowers:
+#		if val != null:
+#			Flowers_only.append(val)
 	
-func light_flower():
-	var rand_flower = Flowers_only[randi() % Flowers_only.size()]
+#func light_flower():
+#	var rand_flower = Flowers_only[randi() % Flowers_only.size()]
 
-	
 func _on_MusicTimer_timeout():
 	MusicController.turn_down_volume()
 	$CountdownTimer.start()
 	$CountdownLabel.visible = true
-	light_flower()
 	get_tree().call_group("flower", "light_on")
 	get_tree().call_group("flower", "stop_move")
 	get_tree().call_group("worms", "stop_move")
@@ -99,6 +94,3 @@ func spawn_worm(WormScene, location):
 
 func _on_DeathZone_area_entered(area):
 	area.queue_free()
-
-
-

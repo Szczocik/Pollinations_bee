@@ -1,7 +1,5 @@
 extends Node2D
 
-signal light_flower(FlowerScene, lokation)
-
 onready var gui_layer = $GUILayer
 onready var hud = $GUILayer/HUD
 onready var player = $Player
@@ -24,7 +22,7 @@ func _ready():
 				has_flower = true
 		if not has_flower:
 			Flowers.append(null)
-	check_flowers()
+#	check_flowers()
 	MusicController.play_music()
 	$MusicTimer.start()
 	hud.update_flowers($Player.score)
@@ -35,14 +33,14 @@ func _process(_delta):
 	hud.update_flowers($Player.score)
 	hud.update_worms($Player.target)
 	
-func check_flowers():
-	for val in Flowers:
-		if val != null:
-			Flowers_only.append(val)
-	
-func light_flower():
-	var light = flower.instance()
-	var rand_flower = Flowers_only[randi() % Flowers_only.size()]
+#func check_flowers():
+#	for val in Flowers:
+#		if val != null:
+#			Flowers_only.append(val)
+#
+#func light_flower():
+#	var light = flower.instance()
+#	var rand_flower = Flowers_only[randi() % Flowers_only.size()]
 
 func _on_MusicTimer_timeout():
 	MusicController.turn_down_volume()

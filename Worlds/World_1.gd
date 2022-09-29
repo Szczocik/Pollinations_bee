@@ -83,6 +83,3 @@ func spawn_worm(WormScene, location):
 
 func _on_DeathZone_area_entered(area):
 	area.queue_free()
-
-
-

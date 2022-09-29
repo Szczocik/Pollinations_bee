@@ -14,4 +14,3 @@ func stop_move():
 	
 func start_move():
 	$AnimationPlayer.play("move")
-	
