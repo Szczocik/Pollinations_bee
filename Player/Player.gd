@@ -23,15 +23,15 @@ func _physics_process(_delta):
 	process_mouse()
 
 func process_mouse():
-	var target = get_viewport().get_mouse_position().x
+	var target_mouse = get_viewport().get_mouse_position().x
 	var bee_width = get_node("CollisionShape2D").shape.extents.x
 	var viewport_width = get_viewport().size.x
-	if position.x < target:
+	if position.x < target_mouse:
 		if not test_move(Transform2D(transform), Vector2(1,0)):
-			position.x = min(target, viewport_width - bee_width)
-	elif position.x > target:
+			position.x = min(target_mouse, viewport_width - bee_width)
+	elif position.x > target_mouse:
 		if not test_move(Transform2D(transform), Vector2(-1,0)):
-			position.x = max(target, bee_width)
+			position.x = max(target_mouse, bee_width)
 			
 func	_look_at_flower():
 	flower = get_parent().get_flower()
@@ -72,7 +72,7 @@ func add_score():
 	score += 1
 	if score >= 5:
 		$ChangeSceneTimer.start()
-	if score >= 6:
+	if score >= 7:
 		$MenuTimer.start()	
 		
 func down_score():

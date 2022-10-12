@@ -72,10 +72,9 @@ position = Vector2( -47, 383 )
 shape = SubResource( 2 )
 
 [node name="WallRight" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1986, 165 )
+position = Vector2( 1936, 537 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallRight"]
-position = Vector2( -47, 383 )
 shape = SubResource( 2 )
 
 [node name="Stripes" type="Node" parent="."]
