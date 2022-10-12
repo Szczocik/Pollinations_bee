@@ -200,7 +200,7 @@ texture = ExtResource( 1 )
 shape = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "scaling"
+autoplay = "move1"
 anims/RESET = SubResource( 2 )
 anims/light = SubResource( 5 )
 anims/move = SubResource( 3 )

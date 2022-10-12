@@ -31,6 +31,7 @@ extents = Vector2( 90, 533 )
 extents = Vector2( 1000, 37.5 )
 
 [node name="World_4" type="Node2D"]
+position = Vector2( -5, 2 )
 script = ExtResource( 1 )
 flower = [ ExtResource( 3 ), ExtResource( 10 ) ]
 
@@ -40,6 +41,7 @@ margin_bottom = 1080.0
 color = Color( 0.941176, 0.0392157, 0.231373, 1 )
 
 [node name="CountdownLabel" type="Label" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1920.0
@@ -85,6 +87,9 @@ collision_layer = 2
 position = Vector2( 114, 532 )
 shape = SubResource( 3 )
 
+[node name="Flower3" parent="Stripes/Strip1" instance=ExtResource( 3 )]
+position = Vector2( 115, 570 )
+
 [node name="Strip2" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
 
@@ -98,6 +103,9 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip3"]
 position = Vector2( 502, 539 )
 shape = SubResource( 3 )
+
+[node name="Flower2" parent="Stripes/Strip3" instance=ExtResource( 10 )]
+position = Vector2( 504, 290 )
 
 [node name="Strip4" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
@@ -113,12 +121,18 @@ collision_layer = 2
 position = Vector2( 884, 539 )
 shape = SubResource( 3 )
 
+[node name="Flower3" parent="Stripes/Strip5" instance=ExtResource( 3 )]
+position = Vector2( 877, 670 )
+
 [node name="Strip6" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip6"]
 position = Vector2( 1070, 542 )
 shape = SubResource( 3 )
+
+[node name="Flower3" parent="Stripes/Strip6" instance=ExtResource( 3 )]
+position = Vector2( 1063, 670 )
 
 [node name="Strip7" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
@@ -133,6 +147,9 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stripes/Strip8"]
 position = Vector2( 1446, 542 )
 shape = SubResource( 3 )
+
+[node name="Flower2" parent="Stripes/Strip8" instance=ExtResource( 10 )]
+position = Vector2( 1424, 290 )
 
 [node name="Strip9" type="Area2D" parent="Stripes" groups=["Strip"]]
 collision_layer = 2
@@ -149,8 +166,11 @@ collision_layer = 2
 position = Vector2( 1822, 542 )
 shape = SubResource( 3 )
 
+[node name="Flower3" parent="Stripes/Strip10" instance=ExtResource( 3 )]
+position = Vector2( 1816, 570 )
+
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 640, 630 )
+position = Vector2( 960, 950 )
 z_index = 1
 score = 1
 flower = ExtResource( 3 )
@@ -162,25 +182,31 @@ worms = [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ) ]
 [node name="SpawnPositions" type="Node" parent="WormSpawner"]
 
 [node name="WormStart1" type="Position2D" parent="WormSpawner/SpawnPositions"]
-position = Vector2( 132, -67 )
+position = Vector2( 210, -75 )
 
 [node name="WormStart2" type="Position2D" parent="WormSpawner/SpawnPositions"]
-position = Vector2( 246, -104 )
+position = Vector2( 354, -190 )
 
 [node name="WormStart3" type="Position2D" parent="WormSpawner/SpawnPositions"]
-position = Vector2( 368, -63 )
+position = Vector2( 600, -43 )
 
 [node name="WormStart4" type="Position2D" parent="WormSpawner/SpawnPositions"]
-position = Vector2( 640, -118 )
+position = Vector2( 756, -136 )
 
 [node name="WormStart5" type="Position2D" parent="WormSpawner/SpawnPositions"]
-position = Vector2( 897, -65 )
+position = Vector2( 937, -81 )
 
 [node name="WormStart6" type="Position2D" parent="WormSpawner/SpawnPositions"]
-position = Vector2( 1043, -101 )
+position = Vector2( 1184, -159 )
 
 [node name="WormStart7" type="Position2D" parent="WormSpawner/SpawnPositions"]
-position = Vector2( 1168, -67 )
+position = Vector2( 1314, -82 )
+
+[node name="WormStart8" type="Position2D" parent="WormSpawner/SpawnPositions"]
+position = Vector2( 1569, -90 )
+
+[node name="WormStart9" type="Position2D" parent="WormSpawner/SpawnPositions"]
+position = Vector2( 1722, -163 )
 
 [node name="SpawnTimer" type="Timer" parent="WormSpawner"]
 autostart = true
