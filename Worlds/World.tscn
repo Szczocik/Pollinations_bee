@@ -33,10 +33,11 @@ margin_bottom = 1080.0
 color = Color( 0.054902, 0.388235, 0.113725, 1 )
 
 [node name="CountdownLabel" type="Label" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1920.0
-margin_bottom = 1080.0
+margin_bottom = 1040.0
 custom_fonts/font = SubResource( 4 )
 text = "Countdown"
 align = 1
@@ -45,20 +46,19 @@ valign = 2
 [node name="Walls" type="Node" parent="."]
 
 [node name="WallTop" type="StaticBody2D" parent="Walls"]
+position = Vector2( 966, -13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallTop"]
-position = Vector2( 956, -11 )
 shape = SubResource( 1 )
 
 [node name="WallBottom" type="StaticBody2D" parent="Walls"]
-position = Vector2( -5, 740 )
+position = Vector2( 952, 1091 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallBottom"]
-position = Vector2( 954, 352 )
 shape = SubResource( 1 )
 
 [node name="WallLeft" type="StaticBody2D" parent="Walls"]
-position = Vector2( 28, -11 )
+position = Vector2( 29, -2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallLeft"]
 position = Vector2( -44, 550 )
@@ -68,7 +68,7 @@ shape = SubResource( 2 )
 position = Vector2( 1346, -19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallRight"]
-position = Vector2( 589, 552 )
+position = Vector2( 591, 558 )
 shape = SubResource( 2 )
 
 [node name="Stripes" type="Node" parent="."]
