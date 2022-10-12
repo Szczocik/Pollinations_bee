@@ -3,7 +3,6 @@ extends Node2D
 onready var gui_layer = $GUILayer
 onready var hud = $GUILayer/HUD
 onready var player = $Player
-onready var pollination_effect = $EffectsLayer/Pollination
 export (PackedScene) var flower = preload("res://Flower/Flower.tscn")
 
 var Stripes = []
